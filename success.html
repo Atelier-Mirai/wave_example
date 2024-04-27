@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <!-- サイトに関する設定事項を記述します -->
-  <head>
+  <head id="head">
     <!-- 文字コードの指定 -->
     <meta charset="utf-8">
 
@@ -32,11 +32,15 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+          href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+
+    <!-- 部分ファイルを読み込む -->
+    <script src="include.js"></script>
 
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
   </head>
+
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="post">
@@ -46,28 +50,8 @@
     </header>
 
     <!-- ナビゲーションメニュー -->
-    <nav>
-      <ul>
-        <li>
-          <a href="index.html">
-            <i class="fa-solid fa-house fa-lg fa-fw"></i>
-            トップ
-          </a>
-        </li>
-        <li>
-          <a href="about.html">
-            <i class="fa-brands fa-pagelines fa-lg fa-fw"></i>
-            サイトについて
-          </a>
-        </li>
-        <li>
-          <a href="contact.html">
-            <i class="fa-solid fa-envelope fa-lg fa-fw"></i>
-            お問い合わせ
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <nav id="navigation"></nav>
+    <script>include("navigation")</script>
 
     <!-- 投稿記事 -->
     <article>
@@ -79,96 +63,11 @@
     </article>
 
     <!-- サブメニュー -->
-    <div class="submenu">
-      <!-- プロフィール -->
-      <aside class="profile">
-        <h2>PROFILE</h2>
-        <figure>
-          <img src="images/profile.webp" alt="WAVEの管理人" class="circular">
-        </figure>
-        <p>
-          部屋の掃除は好きだけれど、お皿洗いは苦手。
-          毎日そこら辺をお散歩しています。
-        </p>
-      </aside>
-
-      <!-- ピックアップ記事 -->
-      <aside class="pickup">
-        <h2>PICKUP</h2>
-        <ul>
-          <li>
-            <a href="post01.html">
-              <figure>
-                <img src="images/note.webp" alt="">
-              </figure>
-              <h3>スケッチが楽しくなるノート</h3>
-            </a>
-          </li>
-          <li>
-            <a href="post02.html">
-              <figure>
-                <img src="images/plant.webp" alt="">
-              </figure>
-              <h3>緑のアクセントならこれ</h3>
-            </a>
-          </li>
-          <li>
-            <a href="post03.html">
-              <figure>
-                <img src="images/items.webp" alt="">
-              </figure>
-              <h3>小物と飾り棚の組み合わせ</h3>
-            </a>
-          </li>
-          <li>
-            <a href="post04.html">
-              <figure>
-                <img src="images/chair.webp" alt="">
-              </figure>
-              <h3>居心地のいい部屋にあるもの</h3>
-            </a>
-          </li>
-          <li>
-            <a href="post05.html">
-              <figure>
-                <img src="images/tile.webp" alt="">
-              </figure>
-              <h3>カラフルなタイル</h3>
-            </a>
-          </li>
-          <li>
-            <a href="post06.html">
-              <figure>
-                <img src="images/recipe.webp" alt="">
-              </figure>
-              <h3>美味しいオムレツのレシピ</h3>
-            </a>
-          </li>
-        </ul>
-      </aside>
-    </div>
+    <div id="submenu" class="submenu"></div>
+    <script>include("submenu")</script>
 
     <!-- フッター -->
-    <footer>
-      <address>
-        <p class="company_name">(有) WAVE商会</p>
-        <p class="address">名古屋市美波区美波町三丁目七番三号</p>
-        <p class="tel">
-          <a href="tel:052-373-4649">
-            <i class="fa-solid fa-phone fa-rotate-90 fa-lg"></i>
-            052-373-4649
-          </a>
-        </p>
-        <p class="email">
-          <a href="mailto:contact@wave.example.jp">
-            <i class="fa-regular fa-envelope fa-lg"></i>
-            contact@wave.example.jp
-          </a>
-        </p>
-      </address>
-      <p class="copyright">
-        Copyright © 令和六年 WAVE All rights reserved.
-      </p>
-    </footer>
+    <footer id="footer"></footer>
+    <script>include("footer")</script>
   </body>
 </html>

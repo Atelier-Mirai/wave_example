@@ -219,6 +219,7 @@ function showCalendar(year, month) {
   // イベントリスナ 設定
   table.querySelectorAll(".blogday").forEach((td) => {
     td.querySelector("a").addEventListener("click", () => {
+      document.title = td.title
       document.getElementById("title").textContent  = td.title
       document.getElementById("hiduke").textContent = td.dataset.hiduke
       if (td.dataset.image === "") {
@@ -234,6 +235,7 @@ function showCalendar(year, month) {
   // その月の最初のブログを表示する
   let td = table.querySelector(".blogday")
   if (td) {
+    document.title = td.title
     document.getElementById("title").textContent  = td.title
     document.getElementById("hiduke").textContent = td.dataset.hiduke
     if (td.dataset.image === "") {
@@ -251,6 +253,7 @@ function showCalendar(year, month) {
     a.addEventListener("click", () => {
       let date = a.dataset.date
       let td = document.querySelector(`[data-date="${date}"]`)
+      document.title = td.title
       document.getElementById("title").textContent  = td.title
       document.getElementById("hiduke").textContent = td.dataset.hiduke
       if (td.dataset.image === "") {
