@@ -75,7 +75,7 @@ function showTableData() {
           <td>${record.date}</td>
           <td>${record.hiduke}</td>
           <td>${record.image === null ? "" : record.image}</td>
-          <td>${record.paragraph.split("\n").map((s) => s.trim()).join("<br>").substring(0, 49)}</td>
+          <td>${record.paragraph.split("\n").map((s) => s.strip()).join("<br>").substring(0, 49)}</td>
           <td class="ui center aligned"><a href="#" class="ui green tertiary edit button">編集</a>
               <a href="#" class="ui red tertiary delete button">削除</a></td>
         </tr>
@@ -113,7 +113,7 @@ function saveData() {
           <td>${record.date}</td>
           <td>${record.hiduke}</td>
           <td>${record.image === null ? "" : record.image}</td>
-          <td>${record.paragraph.split("\n").map((s) => s.trim()).join("<br>").substring(0, 49)}</td>
+          <td>${record.paragraph.split("\n").map((s) => s.strip()).join("<br>").substring(0, 49)}</td>
           <td class="ui center aligned"><a href="#" class="ui green tertiary edit button">編集</a>
               <a href="#" class="ui red tertiary delete button">削除</a></td>
         </tr>

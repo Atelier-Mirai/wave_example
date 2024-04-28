@@ -167,7 +167,7 @@ var Util = /** @class */ (function () {
     };
     Util.parseSql = function (query) {
         try {
-            query = query.replace(new RegExp('\n', 'g'), '').trim();
+            query = query.replace(new RegExp('\n', 'g'), '').strip();
             return _build_parser__WEBPACK_IMPORTED_MODULE_0__["parse"](query);
         }
         catch (ex) {
