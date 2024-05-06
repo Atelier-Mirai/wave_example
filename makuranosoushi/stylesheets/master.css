@@ -1,0 +1,90 @@
+/* ボディー */
+body {
+  background: url(../images/washi.webp);  /* 和紙の背景画像 */
+  font-family: "New Tegomin", serif;      /* 手書き風の書体を指定 */
+  color: #171917; /* 墨色 */
+  font-size: 2rem;
+  word-wrap: break-word;
+}
+
+/* ヘッダー（＝枕草子） */
+.header {
+  /* https://developer.mozilla.org/ja/docs/Web/CSS/position */
+  position: fixed;     /* 位置固定表示 */
+  top: 0;              /* 表示位置 上から0px */
+  left: 0;             /* 表示位置 左から0px */
+
+  width: 240px;
+  height: 100vh;       /* 1vhは画面高さの1%を表す単位 */
+  background: #feeeed; /* 桜色 */
+  padding: 150px 0 0 0;
+
+  display: grid;
+  /* justify-self は自分自身に対する指定 */
+  /* justify-content は、自身が含む傘下の要素、
+     この場合なら、すなわち 内包する h1 に対する指定 */
+  justify-content: center;
+
+  h1 {
+    writing-mode: vertical-rl; /* 縦書き */
+    font-size: 3.5rem;         /* rem は １文字分の大きさ を表す単位 */
+                               /* 3.5rem なら、3.5倍の文字サイズで表示される */
+    letter-spacing: 1.5rem;    /* 文字間隔 */
+  }
+}
+
+/* メイン（＝写真と随筆） */
+main {
+  display: grid;   /* グリッドモードに設定 */
+                   /* grid-template-columns や */
+                   /* grid-template-rows を書かなくても */
+                   /* 一列 x 四行に自動設定されるので、*/
+  row-gap: 100px;  /* 行間のみ指定 */
+  margin-bottom: 100px;  /* 最後も和紙があると見栄えが良いので */
+}
+
+/* 季節を彩る背景写真を個別指定する */
+.haru  .photograph { background: url(../images/haru.webp) no-repeat center; }
+.natsu .photograph { background: url(../images/natsu.webp) no-repeat center; }
+.aki   .photograph { background: url(../images/aki.webp) no-repeat center; }
+.fuyu  .photograph { background: url(../images/fuyu.webp) no-repeat center; }
+
+/* 各季節の配置 */
+.kisetsu {
+  display: grid;
+  /* 背景写真 */
+  .photograph {
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/background-size */
+    /* 背景画像の大きさ指定 */
+    background-size: cover;
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/background-attachment */
+    /* 背景画像を固定 */
+    background-attachment: fixed;
+    width: 100%;
+    height: 50vh;
+  }
+
+  /* 見出し */
+  .heading {
+    display: grid;
+    justify-content: center;
+    h2 {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      letter-spacing: 0.2em;
+      font-size: 2.5rem;
+      margin: 100px 0;
+    }
+  }
+
+  /* 随筆 */
+  article {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    writing-mode: vertical-rl;
+    height: 13em;
+    line-height: 2.5;
+  }
+}
