@@ -19,7 +19,6 @@
 /* CSSで三角形を実装するにはaspect-ratioとclip-pathを使用するのが簡単 -CSS Triangle Shapes
 /* https://coliss.com/articles/build-websites/operation/css/css-triangle-shapes.html で紹介されている CSS Triangle Shapes https://css-generators.com/triangle-shapes/ を使うと楽です */
 
-
 /* 正方形に切り取る */
 .square {
   width: 120px;
