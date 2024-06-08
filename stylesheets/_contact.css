@@ -23,13 +23,35 @@ form {
     padding: 10px;          /* 空白を設ける */
     font-size: 16px;        /* iOS では 16px 未満だと自動拡大されるため、
                                書体の大きさを 16px に設定 */
-    font-family: 'Hachi Maru Pop', cursive; /* はちまるポップ体 */
+    font-family: "Hachi Maru Pop", cursive; /* はちまるポップ体 */
+
+    outline: none;
+    border: 1px solid var(--nibiiro);
+    border-radius: 5px;
+    color: var(--kurohairo);
+    transition: box-shadow 0.1s ease,
+                border-color 0.1s ease;
+    box-shadow: none;
+
+    &:hover {
+      background: var(--sakurairo);
+      border-color: var(--botaniro);
+    }
+
+    &:focus {
+      color: var(--ayameiro);
+    }
+
+    &:required {
+      border: 1px solid var(--shinonomeiro);
+      box-shadow: 1px 1px 2px var(--shinonomeiro);
+    }
   }
 
   /* 入力欄に表示される入力例の文字(プレイスホルダ) */
   input::placeholder,
   textarea::placeholder {
-    font-family: 'Hachi Maru Pop', cursive; /* はちまるポップ体 */
+    font-family: "Hachi Maru Pop", cursive; /* はちまるポップ体 */
   }
 
   textarea { height: 120px; /* 高さを指定 */ }
@@ -54,10 +76,8 @@ form {
     color: var(--kyohiiro);
   }
 
-  /* ラベルの表示位置を上方に調整 */
+  /* ラベル表示 */
   label {
-    display: block;     /* ブロック要素として表示にする
-                           幅と高さを持てるようになるので、上に移動可能となる */
     font-size: 14px;    /* 書体の大きさを指定 */
     padding: 7px;       /* 空白を設ける */
   }

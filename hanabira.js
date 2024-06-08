@@ -57,7 +57,7 @@
 
     // 際大揺らぎ回数に達しているか？
     isTremorMax() {
-      return (this.tremorCount === this.tremorMax)
+      return this.tremorCount === this.tremorMax
     }
 
     // 揺らぎ方向転換
@@ -72,7 +72,7 @@
     // 花びらの位置に関して
     // 空中にいるか？(ウィンドウ内か？)
     isInTheAir() {
-      return (this.y < scroll + windowHeight - HANABIRA_HEIGHT)
+      return this.y < scroll + windowHeight - HANABIRA_HEIGHT
     }
 
     // 地面に着いたか？
@@ -82,13 +82,13 @@
 
     // 右端にいるか？
     isOnTheRightEdge() {
-      return (this.x + HANABIRA_WIDTH >= windowWidth)
+      return this.x + HANABIRA_WIDTH >= windowWidth
     }
 
     // 左端にいるか？
     isOnTheLeftEdge() {
       // 花びら幅の半分の位置なら、左端と見做す。
-      return (this.x <= HANABIRA_WIDTH / 2)
+      return this.x <= HANABIRA_WIDTH / 2
     }
 
     // 花びらの x, y 座標を更新する
