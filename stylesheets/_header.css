@@ -3,7 +3,8 @@
   モバイル版・デスクトップ版 共通の設定
 =============================================================================*/
 header  {
-  grid-row: head;
+  /* grid-row: head; */
+  grid-area: head;
   justify-self: center;
   align-self: center;
   font-family: "Yuji Boku", serif;

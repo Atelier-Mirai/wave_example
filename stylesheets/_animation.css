@@ -8,7 +8,7 @@
 /* ヘッダー要素にアニメーション指定 */
 header {
   animation-duration: 3s;          /* 継続時間 */
-  animation-name: slidein;         /* キーフレーム */
+  animation-name: slidein;         /* キーフレームの名前 */
   animation-iteration-count: 5;    /* 繰り返し回数 */
                                    /* 5に代えて infinite なら 無限 */
   animation-direction: alternate;  /* 前後に移動 */
@@ -21,20 +21,20 @@ header {
 @keyframes slidein {
   /* from (0%, 0秒後) の指定 */
   from {
-    margin-left: 100%;
+    margin-inline-start: 100%;
     width: 300%;
   }
 
   /* 33% (3s * 33 % = 1秒後) の指定 */
   33% {
     font-size: 75px;
-    margin-left: 25%;
+    margin-inline-start: 25%;
     width: 150%;
   }
 
   /* to (100%, 3秒後) の指定 */
   to {
-    margin-left: 0%;
+    margin-inline-start: 0%;
     width: 100%;
   }
 }

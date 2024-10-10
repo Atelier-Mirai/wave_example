@@ -1,42 +1,13 @@
 /*=============================================================================
   ヒーローイメージ
-  モバイル版・デスクトップ版 共通の設定
 =============================================================================*/
 .hero {
   grid-column: 1 / -1;
-  grid-row: title / span 2;
-}
-
-.hero img {
-  height: 547px;
-  object-fit: cover;
-  vertical-align: bottom;
-  filter: brightness(80%);
-  z-index: -1;
-  position: relative; /* hack */
-}
-
-/*=============================================================================
-  デスクトップ版の設定
-=============================================================================*/
-@media (width >= 768px) {
-  .hero {
-    grid-row: title;
-    margin-top: -20px;
-  }
-}
-
-/*=============================================================================
-  同じ内容ですが、CSS Nested 記法(入れ子になったCSS)では次のように書きます。
-=============================================================================*/
-.hero {
-  grid-column: 1 / -1;
-  grid-row: title / span 2;
+  grid-row: 1 / span 2;
 
   img {
-    height: 547px;
+    height: calc(100vh - 100px);
     object-fit: cover;
-    vertical-align: bottom;
     filter: brightness(80%);
     z-index: -1;
     position: relative; /* hack */
@@ -44,7 +15,12 @@
 
   /* 画面幅が768px以上なら */
   @media (width >= 768px) {
-    grid-row: title;
-    margin-top: -20px;
+    grid-row: 1;
+    margin-block-start: -20px;
+
+    img {
+      width: 100vw;
+      height: auto;
+    }
   }
 }

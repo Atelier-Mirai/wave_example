@@ -129,7 +129,7 @@
 }
 
 /* aside の css を少し調整 */
-.post .submenu aside.pickup  { padding: 0; margin-bottom: 0; }
+.post .submenu aside.pickup  { padding: 0; margin-block-end: 0; }
 
 /* 配置を少し調整 */
 @media (width >= 768px) {

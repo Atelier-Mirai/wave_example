@@ -2,102 +2,46 @@
 <html lang="ja">
   <!-- サイトに関する設定事項を記述します -->
   <head>
-    <!-- 文字コードの指定 -->
-    <meta charset="utf-8">
-
-    <!-- ページのタイトル -->
-    <title>スケッチが楽しくなるノート - WAVE</title>
-
-    <!-- ビューポート(視点)の指定 -->
-    <meta name="viewport" content="width=device-width">
-
-    <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
-    <link rel="icon"
-          href="images/favicon.ico"
-          type="image/ico">
-    <link rel="apple-touch-icon"
-          href="images/apple-touch-icon-180x180.png"
-          type="image/png"
-          sizes="180x180">
-
-    <!-- 検索時に表示される、ウェブサイトの要約文 -->
-    <meta name="description" content="概ね80文字前後のサイトの
-    紹介文が、検索時に表示されます。">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
-
-    <!-- 自分で作ったスタイルシート -->
-    <link rel="stylesheet" href="stylesheets/master.css">
+    <script src="include.js"></script>
+    <script>includeHead()</script>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="post">
     <!-- ヘッダー(サイト名) -->
-    <header>
-      <a href="index.html">WAVE</a>
-    </header>
+    <header id="header"></header>
+    <script>include("header")</script>
 
     <!-- ナビゲーションメニュー -->
-    <nav>
-      <ul>
-        <li>
-          <a href="index.html">
-            <i class="fa-solid fa-house fa-lg fa-fw"></i>
-            トップ
-          </a>
-        </li>
-        <li>
-          <a href="about.html">
-            <i class="fa-brands fa-pagelines fa-lg fa-fw"></i>
-            サイトについて
-          </a>
-        </li>
-        <li>
-          <a href="contact.html">
-            <i class="fa-solid fa-envelope fa-lg fa-fw"></i>
-            お問い合わせ
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <nav id="navigation"></nav>
+    <script>include("navigation")</script>
 
-    <!-- 投稿記事 -->
-    <article>
-      <h1>スケッチが楽しくなるノート</h1>
-      <time datetime="2024-07-25">
-        <i class="fa-regular fa-clock fa-lg fa-fw"></i>
-        七月二十五日
-      </time>
+    <!-- 主要なコンテンツ -->
+    <main>
+      <!-- 投稿記事 -->
+      <article>
+        <h1>緑のアクセントならこれ</h1>
+        <time datetime="2024-08-25">
+          <i class="fa-regular fa-clock fa-lg fa-fw"></i>
+          八月二十五日
+        </time>
 
-      <figure class="sepia rotate-3 frame">
-        <img src="images/note.webp"
-             alt="スケッチを書き込んだノート">
-      </figure>
+        <figure class="sepia rotate-3 frame">
+          <img src="images/plant.webp"
+               alt="サボテンの植木鉢">
+        </figure>
 
-      <p>
-        楽しい文房具に囲まれていると、
-        それだけで仕事や勉強にもやる気が出てきます。
-        最近のお気に入りは、白地のノートです。
-      </p>
-      <p>
-        好きなことを自由に書き込むことができるので、
-        ちょっとしたスケッチやメモ書きも楽しくなります。
-        マーカーも良くなじむので、
-        カラフルな図も綺麗に描くことができます。
-      </p>
-      <p>
-        スマホのアプリも便利ですが、
-        たまには紙とペンを使ってみるのもお薦めです。
-      </p>
-    </article>
+        <p>
+          日常の中で緑の植物は心を和ませる存在ですが、特にサボテンは魅力的です。植木鉢に植えられたサボテンは、シンプルな美しさと独特の存在感を持ち、どんな空間にも緑のアクセントを加えてくれます。
+        </p>
+        <p>
+          サボテンは手入れが簡単で、小さな鉢に収まったものから大きなものまで楽しめます。乾燥した環境でも元気に育ち、デスクや窓辺に置くと自然のエッセンスを取り入れることができ、インテリアに彩りを添えます。
+        </p>
+        <p>
+          サボテンを取り入れることで、日々の生活に彩りを加え、リラックスできる時間を提供してくれるでしょう。緑のアクセントとして、ぜひサボテンを育ててみてはいかがでしょうか。
+        </p>
+      </article>
+    </main>
 
     <!-- サブメニュー -->
     <div class="submenu">
@@ -211,26 +155,7 @@
     </div>
 
     <!-- フッター -->
-    <footer>
-      <address>
-        <p class="company_name">(有) WAVE商会</p>
-        <p class="address">名古屋市美波区美波町三丁目七番三号</p>
-        <p class="tel">
-          <a href="tel:052-373-4649">
-            <i class="fa-solid fa-phone fa-rotate-90 fa-lg"></i>
-            052-373-4649
-          </a>
-        </p>
-        <p class="email">
-          <a href="mailto:contact@wave.example.jp">
-            <i class="fa-regular fa-envelope fa-lg"></i>
-            contact@wave.example.jp
-          </a>
-        </p>
-      </address>
-      <p class="copyright">
-        Copyright © 令和六年 WAVE All rights reserved.
-      </p>
-    </footer>
+    <footer id="footer"></footer>
+    <script>include("footer")</script>
   </body>
 </html>

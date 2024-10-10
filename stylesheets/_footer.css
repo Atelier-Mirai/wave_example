@@ -24,49 +24,62 @@ footer {
 
   /* 美しいグラデーションをCSSで実装 */
   /* https://www.webcreatorbox.com/tech/css-gradient */
-  background: linear-gradient(45deg, #2ca9e128, #ffec4760) fixed,
-              url('../images/sea02.webp') 75% 75%;
+  /* background: linear-gradient(45deg, #2ca9e128, #ffec4760) fixed, */
+              /* url('../images/sea02.webp') 75% 75%; */
+  background: url("../images/sea02.webp") 75% 75%;
   background-size: cover;
   width: 100vw;
 
   /* 傘下の要素の為に、自身をグリッドコンテナにする */
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
+  /* grid-template-columns: 1fr;
+  grid-template-rows:    auto auto; */
+  grid-template:
+      "address"   auto
+      "copyright" auto
+    / 1fr;
+
   line-height: 1.75;
   text-align: center;
 
   address {
-    grid-column: 1;
-    grid-row: 1;
+    /* grid-column: 1;
+    grid-row: 1; */
+    grid-area: address;
     align-self: center;
 
-    .company_name {
-      color: var(--utsushiiro);
-      font-size: var(--font-size-base);
-      font-weight: bold;
-    }
-
-    .address {
-      color: var(--botaniro);
-      text-shadow: 1px 1px 1px var(--kurohairo);
-      font-size: var(--font-size-base);
-    }
-
+    .company_name,
+    .address,
     .tel,
     .email {
+      text-shadow: 1px  1px 3px var(--sakurairo),
+                   1px -1px 3px var(--sakurairo),
+                  -1px  1px 3px var(--sakurairo),
+                  -1px -1px 3px var(--sakurairo); /* 桜色の影を作る */
+    }
+
+    .company_name {
+      font-size: larger;
+      color: var(--utsushiiro);
+    }
+
+    .address,
+    .tel,
+    .email {
+      font-size: medium;
+      color: var(--kurohairo);
       a {
         text-decoration: none;
-        color: var(--nanohanairo);
-        text-shadow: 1px 1px 1px var(--kurohairo);
-        font-size: var(--font-size-md);
+        color: inherit;
       }
     }
   }
 
   .copyright {
-    grid-column: 1;
-    grid-row: 2;
+    /* grid-column: 1;
+    grid-row: 2; */
+    grid-area: copyright;
+
     background: var(--kurohairo);
     color: var(--sakurairo);
     font-size: var(--font-size-sm);

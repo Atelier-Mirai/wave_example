@@ -3,7 +3,8 @@
 =============================================================================*/
 
 section {
-  grid-row: recent;
+  /* grid-row: recent; */
+  grid-area: recent;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px 10px;
@@ -24,6 +25,17 @@ section {
     }
   }
 
+  img {
+    border-radius: 10px;  /* 角を丸くする */
+    /* box-shadow: h-offset v-offset blur-radius spread-radius color inset; */
+    box-shadow: 3px 3px 5px #000000c0; /* 影をつける */
+    &:hover {  /* マウスカーソルを重ねたときに */
+      scale: 1.1;  /* 少し拡大する */
+      transition: all 0.5s ease-in-out 0s;  /* 全てのプロパティを、0.5秒、ゆっくり開始し、速度を上げた後、再び速度を遅く変化させる。遅延時間は0秒(直ちに変化する) */
+      /* transition: プロパティ 継続時間 タイミング関数(中間状態をどう変化させるか) 遅延時間; */
+    }
+  }
+
   h2 {
     grid-column: 1 / -1;
     font-family: "Yuji Boku", serif;
@@ -35,6 +47,7 @@ section {
 
   h3 {
     font-size: 14px;
+    margin-block-start: 10px;
 
     /* 疑似要素を使った装飾 */
     &::before {

@@ -1,32 +1,58 @@
 /*===============================================
-  記事ページ
+  記事ページの為の装飾いろいろ
 =================================================*/
-.post {
-  grid-template-rows:
-      [head]    100px
-      [kiji]    auto
-      [submenu] auto
-      [foot]    auto;
-      /* 画面幅が768px以上なら */
-      @media (width >= 768px) {
-        grid-template-rows:
-            [head] 100px
-            [kiji submenu] auto
-            [foot] auto;
-      }
+
+body.post {
+  display: grid;
+  grid-template:
+    ".    head    .   " 100px
+    ".    main    .   " auto
+    ".    submenu .   " auto
+    ".    foot    .   " 140px /
+    20px  1fr     20px;
+  row-gap: 20px;
+
+  /* 画面幅が768px以上なら */
+  @media (width >= 768px) {
+    grid-template:
+      ".    head head head head head    head    .    " 100px
+      ".    main main main main submenu submenu .    " auto
+      ".    foot foot foot foot foot    foot    .    " auto /
+      0.2fr 1fr  1fr  1fr  1fr  1fr     1fr     0.2fr;
+    column-gap: 5%;
+  }
+
+  font-family: "Helvetica Neue",
+                Arial,
+                "Hiragino Kaku Gotic ProN",
+                "Hiragino Sans",
+                Meiryo,
+                sans-serif;
+
+  height: 100vh;
+
+  /* 区切り線 */
+  &::before {
+    content: "";
+    background: var(--nibiiro);
+    height: 2px;
+    grid-column: 1 / -1;
+    grid-row:    2;
+    /* 画面幅が768px以上なら */
+    @media (width >= 768px) {
+      margin-block-start: -20px;
+    }
+  }
+}
+
+.post main {
+  grid-area: main;
 
   /* 投稿記事 */
   article {
-    grid-row: kiji;
-    /* 画面幅が768px以上なら */
-    @media (width >= 768px) {
-      grid-column: 2 / span 4;
-    }
-
     /* 配下の要素の余白指定 */
     > * {
-      margin-top: 1em;
-      margin-bottom: 1em;
+      margin-block: 1em;
       display: block;
     }
 
@@ -46,86 +72,69 @@
     }
   }
 
-  /* 区切り線 */
-  &::before {
-    content: "";
-    background: var(--nibiiro);
-    height: 2px;
-    grid-column: 1 / -1;
-    grid-row: kiji;
-    /* 画面幅が768px以上なら */
-    @media (width >= 768px) {
-      margin-top: -20px;
-    }
-  }
-
   /* 時計アイコン */
   .fa-clock {
     color: var(--amairo);
   }
+}
 
-  /* サブメニュー */
-  .submenu {
-    grid-row: submenu;
-    /* 画面幅が768px以上なら */
-    @media (width >= 768px) {
-      grid-column: 6 / span 2;
+/* サブメニュー */
+.submenu {
+  grid-area: submenu;
+
+  /* aside 要素に枠線などの装飾を指定する */
+  aside {
+    border: solid 1px var(--amairo);
+    padding: 20px;
+    margin: 30px 0;
+    text-align: center;
+
+    /* 見出し */
+    h2 {
+      border-bottom: solid 2px var(--sanaeiro);
+      padding-bottom: 20px;
+      margin-block-end: 20px;
+      color: var(--sanaeiro);
+      font-weight: normal;
+      font-family: 'Yuji Boku', serif;
     }
 
-    /* aside 要素に枠線などの装飾を指定する */
-    aside {
-      border: solid 1px var(--amairo);
-      padding: 20px;
-      margin: 30px 0;
-      text-align: center;
-
-      /* 見出し */
-      h2 {
-        border-bottom: solid 2px var(--sanaeiro);
-        padding-bottom: 20px;
-        margin-bottom: 20px;
-        color: var(--sanaeiro);
-        font-weight: normal;
-        font-family: 'Yuji Boku', serif;
-      }
-
-      /* 本文 */
-      p {
-        font-size: 14px;
-      }
+    /* 本文 */
+    p {
+      font-size: 14px;
     }
+  }
 
-    /* プロフィール画像の余白指定 */
-    .profile figure img {
-      margin: 0 auto;
-    }
+  /* プロフィール画像の余白指定 */
+  .profile figure img {
+    margin-inline: auto;
+  }
 
-    /* ピックアップ記事の装飾指定 */
-    .pickup {
-      /* ピックアップ記事をグリッド配置する */
-      ul {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px 10px;
-        list-style: none;
-        padding: 0;
-        text-align: left;
+  /* ピックアップ記事の装飾指定 */
+  .pickup {
+    /* ピックアップ記事をグリッド配置する */
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 10px;
+      list-style: none;
+      padding: 0;
+      text-align: left;
 
-        /* リンク */
-        a {
-          color: var(--kurohairo);
-          text-decoration: none;
+      /* リンク */
+      a {
+        color: var(--kurohairo);
+        text-decoration: none;
 
-          &:hover {
-            text-decoration: underline;
-          }
+        &:hover {
+          text-decoration: underline;
         }
       }
+    }
 
-      /* 見出し */
-      h3 {
-        font-size: 14px;
-      }
+    /* 見出し */
+    h3 {
+      font-size: 14px;
     }
   }
 }

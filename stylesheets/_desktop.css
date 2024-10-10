@@ -28,7 +28,7 @@
   /* ヒーローイメージ */
   .hero {
     grid-row: title;
-    margin-top: -20px;
+    margin-block-start: -20px;
   }
 
   /* タイトル */

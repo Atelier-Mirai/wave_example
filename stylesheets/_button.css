@@ -1,0 +1,103 @@
+/*=====================================================================
+  ボタンの為のCSS
+=====================================================================*/
+
+.button {
+  /* 最小値 16px (画面幅375px) */
+  /* 最大値 24px (画面幅768px) */
+  /* clamp 関数により 可変フォントサイズを指定する */
+  font-size: clamp(1rem, 0.523rem + 2.036vw, 1.5rem);
+  font-weight: bold;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+
+/* CSSボタンデザイン120個以上！どこよりも詳しく作り方を解説！ */
+/* https://jajaaan.co.jp/css/button/ */
+
+/* ボタンの基本形 */
+.simple.button {
+  color: var(--sakurairo);
+  text-decoration: none;
+  border: solid 1px var(--sakurairo);
+  padding: 10px 40px;
+  display: inline-block;
+  margin-block-start: 10px;
+  border-radius: 10px;
+  background: #555d6b80;
+
+  a:hover {
+    background: #ef9504;
+  }
+}
+
+/* グラデーションボタン */
+.gradient.button {
+  color: #fff;
+  border-radius: 100vh;
+  background-image: linear-gradient(-20deg,
+                                    #e9defa 0%,
+                                    #fbfcdb 100%);
+
+  span {
+    position: relative;
+    z-index: 1;
+    width: 50vw;
+    display: inline-block;
+
+    background-image: linear-gradient(-225deg,
+                                      #231557 0%,
+                                      #44107a 33%,
+                                      #ff1361 67%,
+                                      #fff800 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &:hover {
+    filter: drop-shadow(0 0 20px var(--nanohanairo));
+  }
+}
+
+/* 金塊のようなボタン */
+.gold.button {
+  color: #b1921b;
+  border-right:   4px solid #cea82c;
+  border-bottom: 10px solid #987c1e;
+  border-left:    4px solid #ffed8b;
+  border-radius: 0;
+  background: linear-gradient(-90deg,
+                              #ffd75b 0%,
+                              #fff5a0 30%,
+                              #fffabe 40%,
+                              #ffffdb 50%,
+                              #fff5a0 70%,
+                              #fdd456 100%);
+  text-shadow: -1px -1px 1px #ffffd9;
+  padding: 0.4rem 0.6rem;
+  letter-spacing: 0;
+
+  span {
+    white-space: nowrap;
+  }
+
+  &:hover {
+    margin-block-start: 3px;
+    color: #b1921b;
+    border-right:  4px solid #cea82c;
+    border-bottom: 7px solid #987c1e;
+    border-left:   4px solid #ffed8b;
+  }
+}

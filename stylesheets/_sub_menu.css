@@ -19,7 +19,7 @@ aside {
   h2 {
     border-bottom: solid 2px var(--sanaeiro);
     padding-bottom: 20px;
-    margin-bottom: 20px;
+    margin-block-end: 20px;
     color: var(--sanaeiro);
     font-weight: normal;
     font-family: 'Yuji Boku', serif;

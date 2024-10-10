@@ -4,11 +4,11 @@
 
 /* サブタイトル */
 .sub_title {
-  grid-row: sub;
+  grid-area: sub;
   text-align: center;
+
   /* 画面幅が768px以上なら */
   @media (width >= 768px) {
-    grid-column: 5 / span 3;
     align-self: center;
   }
 
@@ -19,18 +19,26 @@
     border: solid 1px var(--sakurairo);
     padding: 10px 40px;
     display: inline-block;
-    margin-top: 10px;
+    margin-block-start: 10px;
     border-radius: 10px;
-    background: #555d6b80; /* 16進表記も可能 */
+    background: #555d6b80; /* 背景色を半透明に。16進表記も可能 */
+    /* グラデーションにもできる */
+    background: linear-gradient(45deg, var(--amairo), var(--utsushiiro)); /* 天色から移色 */
 
+    /* マウスカーソルを重ねたときに、色や大きさを変える */
     &:hover {
-      background: #ef9504;
+      background: var(--shinonomeiro);
+      scale: 1.2;
+      rotate: -5deg;
+      /* transition: property duration timing-function delay; */
+      transition: all 0.5s ease-in-out 0s;
     }
   }
 
   img {
     width: 250px;
-    margin: 0 auto;
+    height: auto;
+    margin-inline: auto;
     /* 画面幅が768px以上なら */
     @media (width >= 768px) {
       width: 80%;

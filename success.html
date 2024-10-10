@@ -32,35 +32,43 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+          href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
 
-    <!-- 部分ファイルを読み込む -->
-    <script src="include.js"></script>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css">
 
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
+
+    <!-- 先頭へ戻るボタンの為のJavaScript -->
+    <script src="javascripts/page_top.js" defer></script>
+
+    <!-- 部分ファイルを読み込む -->
+    <script src="include.js"></script>
   </head>
 
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="post">
     <!-- ヘッダー(サイト名) -->
-    <header>
-      <a href="index.html">WAVE</a>
-    </header>
+    <header id="header"></header>
+    <script>include("header")</script>
 
     <!-- ナビゲーションメニュー -->
     <nav id="navigation"></nav>
     <script>include("navigation")</script>
 
-    <!-- 投稿記事 -->
-    <article>
-      <h1>お問い合わせ<br>ありがとうございます</h1>
-      <p>
-        担当者よりご連絡差し上げますので、
-        しばらくお待ちください。
-      </p>
-    </article>
+    <!-- 主要なコンテンツ -->
+    <main>
+      <!-- 投稿記事 -->
+      <article>
+        <h1>お問い合わせ<br>ありがとうございます</h1>
+        <p>
+          担当者よりご連絡差し上げますので、
+          しばらくお待ちください。
+        </p>
+      </article>
+    </main>
 
     <!-- サブメニュー -->
     <div id="submenu" class="submenu"></div>

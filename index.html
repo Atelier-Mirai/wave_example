@@ -32,10 +32,18 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+          href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css">
 
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
+
+    <!-- 文字を煌めかせる為のJavaScript-->
+    <script src="javascripts/glow_text.js" defer></script>
+    <!-- 先頭へ戻るボタンの為のJavaScript -->
+    <script src="javascripts/page_top.js" defer></script>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
@@ -52,9 +60,9 @@
       <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
       <ul>
         <li>
-          <a href="index.html">
-            <i class="fa-solid fa-house fa-lg fa-fw"></i>
-            トップ
+          <a href="#recent">
+            <i class="fa-regular fa-newspaper"></i>
+            最新記事
           </a>
         </li>
         <li>
@@ -72,109 +80,126 @@
       </ul>
     </nav>
 
-    <!-- ヒーローイメージ -->
-    <figure class="hero">
-      <img src="images/room.webp" alt="快適な室内空間">
-    </figure>
+    <!-- 主要なコンテンツ -->
+    <main>
+      <!-- ヒーローイメージ -->
+      <figure class="hero">
+        <!-- <img src="images/room.webp" alt="快適な室内空間"> -->
+        <img src="images/blue_sea_1920x1280.webp" alt="世界で一番の観光地">
+      </figure>
 
-    <!-- タイトル(キャッチフレーズ) -->
-    <h1>Best place to visit in the world</h1>
+      <!-- 文字が煌めくタイトル(キャッチフレーズ) -->
+      <h1 class="glow text">Best place to visit in the world</h1>
 
-    <!-- サブタイトル -->
-    <p class="sub_title">
-      <img src="images/circle.svg" alt=""><br>
-      <a href="#">空間を彩る多彩なアイテム</a>
-    </p>
+      <!-- サブタイトル -->
+      <p class="sub_title">
+        <img src="images/circle.svg" width="300" height="400" alt=""><br>
+        <a href="https://github.com/Atelier-Mirai/wave_example">爽やかな青い空と海</a>
+      </p>
 
-    <!-- サブタイトル -->
-    <p class="sub_title">
-      <img src="images/circle.svg" alt=""><br>
-      <a href="https://github.com/Atelier-Mirai/wave_example">空間を彩る多彩なアイテム</a>
-    </p>
-
-    <!-- 記事一覧 -->
-    <section>
-      <h2>最新記事</h2>
-      <article>
-        <a href="post01.html">
-          <figure>
-            <img src="images/note.webp" alt="">
-          </figure>
-          <h3>スケッチが楽しくなるノート</h3>
-        </a>
-      </article>
-      <article class="link disable">
-        <a href="post02.html">
-          <figure>
-            <img src="images/plant.webp" alt="">
-          </figure>
-          <h3>緑のアクセントならこれ</h3>
-        </a>
-      </article>
-      <article class="link disable">
-        <a href="post03.html">
-          <figure>
-            <img src="images/items.webp" alt="">
-          </figure>
-          <h3>小物と飾り棚の組み合わせ</h3>
-        </a>
-      </article>
-      <article class="link disable">
-        <a href="post04.html">
-          <figure>
-            <img src="images/chair.webp" alt="">
-          </figure>
-          <h3>居心地のいい部屋にあるもの</h3>
-        </a>
-      </article>
-      <article class="link disable">
-        <a href="post05.html">
-          <figure>
-            <img src="images/tile.webp" alt="">
-          </figure>
-          <h3>カラフルなタイル</h3>
-        </a>
-      </article>
-      <article class="link disable">
-        <a href="post06.html">
-          <figure>
-            <img src="images/recipe.webp" alt="">
-          </figure>
-          <h3>美味しいオムレツのレシピ</h3>
-        </a>
-      </article>
-      <article>
-        <a href="makuranosoushi/index.html">
-          <figure>
-            <img src="makuranosoushi/images/haru_s.webp" alt="">
-          </figure>
-          <h3>枕草子</h3>
-        </a>
-      </article>
-      <article>
-        <a href="sakura_fubuki.html">
-          <figure>
-            <img src="blog/images/aozora_to_sakura.webp" alt="">
-          </figure>
-          <h3>さくらを詠んだ俳句</h3>
-        </a>
-      </article>
-      <article>
-        <a href="./blog/index.html">
-          <figure>
-            <img src="images/blog.webp" alt="">
-          </figure>
-          <h3>暦と簡易ブログ</h3>
-        </a>
-      </article>
-    </section>
+      <!-- 記事一覧 -->
+      <section id="recent">
+        <h2 class="title">最新記事</h2>
+        <article>
+          <a href="post01.html">
+            <figure>
+              <img src="images/note.webp" alt="">
+            </figure>
+            <h3>スケッチが楽しくなるノート</h3>
+          </a>
+        </article>
+        <article>
+          <a href="post02.html">
+            <figure>
+              <img src="images/plant.webp" alt="">
+            </figure>
+            <h3>緑のアクセントならこれ</h3>
+          </a>
+        </article>
+        <article class="link disable">
+          <a href="post03.html">
+            <figure>
+              <img src="images/items.webp" alt="">
+            </figure>
+            <h3>小物と飾り棚の組み合わせ</h3>
+          </a>
+        </article>
+        <article class="link disable">
+          <a href="post04.html">
+            <figure>
+              <img src="images/chair.webp" alt="">
+            </figure>
+            <h3>居心地のいい部屋にあるもの</h3>
+          </a>
+        </article>
+        <article class="link disable">
+          <a href="post05.html">
+            <figure>
+              <img src="images/tile.webp" alt="">
+            </figure>
+            <h3>カラフルなタイル</h3>
+          </a>
+        </article>
+        <article class="link disable">
+          <a href="post06.html">
+            <figure>
+              <img src="images/recipe.webp" alt="">
+            </figure>
+            <h3>美味しいオムレツのレシピ</h3>
+          </a>
+        </article>
+        <article>
+          <a href="makuranosoushi/index.html">
+            <figure>
+              <img src="makuranosoushi/images/haru_s.webp" alt="">
+            </figure>
+            <h3>枕草子</h3>
+          </a>
+        </article>
+        <article>
+          <a href="sakura_fubuki.html">
+            <figure>
+              <img src="blog/images/aozora_to_sakura.webp" alt="">
+            </figure>
+            <h3>さくらを詠んだ俳句</h3>
+          </a>
+        </article>
+        <article>
+          <a href="./blog/index.html">
+            <figure>
+              <img src="images/blog.webp" alt="">
+            </figure>
+            <h3>暦と簡易ブログ</h3>
+          </a>
+        </article>
+        <article>
+          <a href="js_example.html">
+            <figure>
+              <img src="images/js.webp" alt="">
+            </figure>
+            <h3>JavaScript練習</h3>
+          </a>
+        </article>
+      </section>
+    </main>
 
     <!-- フッター -->
     <footer>
+      <!-- ページの先頭にスムーズスクロール -->
+      <p id="page_top">
+        <!-- 金色のボタン -->
+        <a href="#" class="gold button">
+          <span>
+            <i class="fa-solid fa-angles-up fa-lg fa-fw"></i>
+            <span class="computer only">Page Top</span>
+          </span>
+        </a>
+      </p>
+
       <!-- 連絡先 -->
       <address>
         <!-- 会社名 -->
-        <p class="company_name">(有) WAVE商会</p>
+        <p class="company_name" data-text="WAVE">(有) WAVE商会</p>
         <!-- 住所 -->
         <p class="address">名古屋市美波区美波町三丁目七番三号</p>
         <!-- 電話番号 -->

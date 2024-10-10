@@ -1,5 +1,5 @@
 // ようこそボタンを取得
-const welcomeButton = document.getElementById("welcome")
+const welcomeButton = document.querySelector("#welcome")
 
 // イベントリスナを設定
 // welcomeボタンを押すと、hello関数が実行される

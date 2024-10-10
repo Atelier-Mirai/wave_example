@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- サイトに関する設定事項を記述します -->
+  <head>
+    <!-- 文字コードの指定 -->
+    <meta charset="utf-8">
+
+    <!-- ページのタイトル -->
+    <title>緑のアクセントならこれ - WAVE</title>
+
+    <!-- ビューポート(視点)の指定 -->
+    <meta name="viewport" content="width=device-width">
+
+    <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
+    <link rel="icon"
+          href="images/favicon.ico"
+          type="image/ico">
+    <link rel="apple-touch-icon"
+          href="images/apple-touch-icon-180x180.png"
+          type="image/png"
+          sizes="180x180">
+
+    <!-- 検索時に表示される、ウェブサイトの要約文 -->
+    <meta name="description" content="概ね80文字前後のサイトの
+    紹介文が、検索時に表示されます。">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css">
+
+    <!-- 自分で作ったスタイルシート -->
+    <link rel="stylesheet" href="stylesheets/master.css">
+
+    <!-- 先頭へ戻るボタンの為のJavaScript -->
+    <script src="javascripts/page_top.js" defer></script>
+
+    <!-- 部分ファイルを読み込む -->
+    <script src="include.js"></script>
+  </head>
+
+  <!-- 表示したい内容・出し物・コンテンツを記述します -->
+  <body class="post">
+    <!-- ヘッダー(サイト名) -->
+    <header id="header"></header>
+    <script>include("header")</script>
+
+    <!-- ナビゲーションメニュー -->
+    <nav id="navigation"></nav>
+    <script>include("navigation")</script>
+
+    <!-- 主要なコンテンツ -->
+    <main>
+      <!-- 投稿記事 -->
+      <article>
+        <h1>緑のアクセントならこれ</h1>
+        <time datetime="2024-08-25">
+          <i class="fa-regular fa-clock fa-lg fa-fw"></i>
+          八月二十五日
+        </time>
+
+        <figure class="sepia rotate-3 frame">
+          <img src="images/plant.webp"
+               alt="サボテンの植木鉢">
+        </figure>
+
+        <p>
+          日常の中で緑の植物は心を和ませる存在ですが、特にサボテンは魅力的です。植木鉢に植えられたサボテンは、シンプルな美しさと独特の存在感を持ち、どんな空間にも緑のアクセントを加えてくれます。
+        </p>
+        <p>
+          サボテンは手入れが簡単で、小さな鉢に収まったものから大きなものまで楽しめます。乾燥した環境でも元気に育ち、デスクや窓辺に置くと自然のエッセンスを取り入れることができ、インテリアに彩りを添えます。
+        </p>
+        <p>
+          サボテンを取り入れることで、日々の生活に彩りを加え、リラックスできる時間を提供してくれるでしょう。緑のアクセントとして、ぜひサボテンを育ててみてはいかがでしょうか。
+        </p>
+      </article>
+    </main>
+
+    <!-- サブメニュー -->
+    <div class="submenu">
+      <!-- プロフィール -->
+      <aside class="profile">
+        <h2>PROFILE</h2>
+        <figure>
+          <img src="images/profile.webp" alt="WAVEの管理人" class="circular">
+        </figure>
+        <p>
+          部屋の掃除は好きだけれど、お皿洗いは苦手。
+          毎日そこら辺をお散歩しています。
+        </p>
+      </aside>
+
+
+      <style>
+      /* PICKUP写真が二列配置になっていたのを、一列配置にする */
+      .post .submenu .pickup ul.container {
+        grid-template-columns: 1fr;
+      }
+
+      /* containerクラス（親クラス）の幅に応じて、
+        itemクラス(子クラス)のスタイルを変更できるようにする */
+      .container {
+        container-type: inline-size;
+      }
+
+      /* itemクラス(子クラス)のスタイル */
+      /* 標準では、写真の下に表題が来るようにする */
+      .item {
+        a {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto;
+          figure { grid-column: 1; grid-row: 1; };
+          h3     { grid-column: 1; grid-row: 2; }
+        }
+      }
+
+      /* containerクラス（親クラス）の幅が300px以上だったら */
+      @container (width > 300px) {
+        /* itemクラス(子クラス)のスタイル */
+        /* 写真の横に表題が来るようにする */
+        .item {
+          a {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            figure { grid-column: 1; grid-row: 1; };
+            h3     { grid-column: 2; grid-row: 1; }
+          }
+        }
+      }
+      </style>
+
+      <!-- ピックアップ記事 -->
+      <aside class="pickup">
+        <h2>PICKUP</h2>
+        <ul class="container">
+          <li class="item">
+            <a href="post01.html">
+              <figure>
+                <img src="images/note.webp" alt="">
+              </figure>
+              <h3>スケッチが楽しくなるノート</h3>
+            </a>
+          </li>
+          <li class="item">
+            <a href="post02.html">
+              <figure>
+                <img src="images/plant.webp" alt="">
+              </figure>
+              <h3>緑のアクセントならこれ</h3>
+            </a>
+          </li>
+          <li class="item">
+            <a href="post03.html">
+              <figure>
+                <img src="images/items.webp" alt="">
+              </figure>
+              <h3>小物と飾り棚の組み合わせ</h3>
+            </a>
+          </li>
+          <li class="item">
+            <a href="post04.html">
+              <figure>
+                <img src="images/chair.webp" alt="">
+              </figure>
+              <h3>居心地のいい部屋にあるもの</h3>
+            </a>
+          </li>
+          <li class="item">
+            <a href="post05.html">
+              <figure>
+                <img src="images/tile.webp" alt="">
+              </figure>
+              <h3>カラフルなタイル</h3>
+            </a>
+          </li>
+          <li class="item">
+            <a href="post06.html">
+              <figure>
+                <img src="images/recipe.webp" alt="">
+              </figure>
+              <h3>美味しいオムレツのレシピ</h3>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- フッター -->
+    <footer id="footer"></footer>
+    <script>include("footer")</script>
+  </body>
+</html>

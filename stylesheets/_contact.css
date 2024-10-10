@@ -7,10 +7,11 @@
 
 /* form 要素を対象に 装飾指定する */
 form {
-  padding-top: 30px;    /* 上に空白を設ける */
+  padding-block-start: 30px;    /* 上に空白を設ける */
+  font-family: "Hachi Maru Pop", cursive; /* はちまるポップ体 */
 
   /* form 内の p 要素を対象に 装飾指定する */
-  p { margin-bottom: 20px; }
+  p { margin-block-end: 20px; }
 
   /* hidden(隠し)クラス属性を付けた要素を対象に 装飾指定する */
   .hidden { display: none;  /* 非表示にする */ }
@@ -23,7 +24,6 @@ form {
     padding: 10px;          /* 空白を設ける */
     font-size: 16px;        /* iOS では 16px 未満だと自動拡大されるため、
                                書体の大きさを 16px に設定 */
-    font-family: "Hachi Maru Pop", cursive; /* はちまるポップ体 */
 
     outline: none;
     border: 1px solid var(--nibiiro);
@@ -51,7 +51,7 @@ form {
   /* 入力欄に表示される入力例の文字(プレイスホルダ) */
   input::placeholder,
   textarea::placeholder {
-    font-family: "Hachi Maru Pop", cursive; /* はちまるポップ体 */
+    color: var(--ayameiro);
   }
 
   textarea { height: 120px; /* 高さを指定 */ }

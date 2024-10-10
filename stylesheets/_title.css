@@ -2,12 +2,11 @@
   タイトル
 =============================================================================*/
 .top h1 {
-  grid-row: title;
+  grid-area: title;
   justify-self: center;
   align-self: center;
   /* 画面幅が768px以上なら */
   @media (width >= 768px) {
-    grid-column: 2 / span 3;
     max-width: 460px;
   }
 
