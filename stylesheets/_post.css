@@ -16,7 +16,7 @@ body.post {
   @media (width >= 768px) {
     grid-template:
       ".    head head head head head    head    .    " 100px
-      ".    main main main main submenu submenu .    " auto
+      ".    main main main main sidebar sidebar .    " auto
       ".    foot foot foot foot foot    foot    .    " auto /
       0.2fr 1fr  1fr  1fr  1fr  1fr     1fr     0.2fr;
     column-gap: 5%;
@@ -79,8 +79,8 @@ body.post {
 }
 
 /* サブメニュー */
-.submenu {
-  grid-area: submenu;
+.post .sidebar {
+  grid-area: sidebar;
 
   /* aside 要素に枠線などの装飾を指定する */
   aside {

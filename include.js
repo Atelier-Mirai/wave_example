@@ -10,7 +10,14 @@
   HTMLで簡単インクルード！ https://jp-seemore.com/web/2408/
 =====================================================================*/
 const include = (partial) => {
-  let filename = `_${partial}.html`
+  let filename = ""
+  if (partial.includes("../")) {
+    // 親ディレクトリを参照する
+    partial = partial.slice(3)
+    filename = `../_${partial}.html`
+  } else {
+    filename = `_${partial}.html`
+  }
   let id       = partial
 
   fetch(filename)
@@ -24,6 +31,8 @@ const include = (partial) => {
 //   <script>includeHead()</script>
 // </head>
 // headタグが、_head.html に置き換わる。
+//
+// 本番環境では、画面の再描画が発生し、1秒ほどちらつくため使用不可
 const includeHead = () => {
   fetch("_head.html")
       .then(response => response.text())

@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="ja">
   <!-- サイトに関する設定事項を記述します -->
-  <head>
+  <head id="head">
     <!-- 文字コードの指定 -->
     <meta charset="utf-8">
 
     <!-- ページのタイトル -->
-    <title>さくら</title>
+    <title>スケッチが楽しくなるノート - WAVE</title>
 
     <!-- ビューポート(視点)の指定 -->
     <meta name="viewport" content="width=device-width">
 
     <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
-    <link rel="icon" href="images/favicon.ico" type="image/ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
+    <link rel="icon"
+          href="images/favicon.ico"
+          type="image/ico">
+    <link rel="apple-touch-icon"
+          href="images/apple-touch-icon-180x180.png"
+          type="image/png"
+          sizes="180x180">
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
     <meta name="description" content="概ね80文字前後のサイトの
     紹介文が、検索時に表示されます。">
 
-    <!-- Google Fonts 書家・片岡佑之さんの手書き書体を使う -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@acab/reset.css@0.10.0/index.min.css">
 
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
+
+    <!-- 先頭へ戻るボタンの為のJavaScript -->
+    <script src="javascripts/page_top.js" defer></script>
+
+    <!-- 部分ファイルを読み込む -->
+    <script src="include.js"></script>
 
     <!-- 桜吹雪の効果の為のスタイルシートを読み込む -->
     <link rel="stylesheet" href="hanabira.css">
@@ -44,91 +60,90 @@
     </header>
 
     <!-- ナビゲーションメニュー -->
-    <nav>
-      <ul>
-        <li><a href="index.html"><i class="fa-solid fa-house fa-lg fa-fw"></i>トップ</a></li>
-        <li><a href="about.html"><i class="fa-brands fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
-        <li><a href="contact.html"><i class="fa-solid fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
-      </ul>
-    </nav>
+    <nav id="navigation"></nav>
+    <script>include("navigation")</script>
 
-    <!-- ヒーローイメージ -->
-    <figure class="hero">
-      <img src="blog/images/sakura.webp" alt="青空と咲き誇る小彼岸桜">
-    </figure>
+    <!-- 主要なコンテンツ -->
+    <main>
 
-    <!-- タイトル(キャッチフレーズ) -->
-    <!-- <h1>Best place to visit in the world</h1> -->
-    <h1 class="sakura_catch_phrase">
-      <div class="lefted text">扇にて</div>
-      <div class="centered text">酒くむかげや</div>
-      <div class="righted text">ちる櫻</div>
-    </h1>
+      <!-- ヒーローイメージ -->
+      <figure class="hero">
+        <img src="images/sakura.webp" alt="青空と咲き誇る小彼岸桜">
+      </figure>
 
-    <!-- サブタイトル -->
-    <p class="sub_title">
-      <img src="images/circle.svg" alt=""><br>
-      <a href="https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B0%BE%E8%8A%AD%E8%95%89">松尾芭蕉</a>
-    </p>
+      <!-- タイトル(キャッチフレーズ) -->
+      <h1 class="sakura_catch_phrase">
+        <div class="lefted text">扇にて</div>
+        <div class="centered text">酒くむかげや</div>
+        <div class="righted text">ちる櫻</div>
+      </h1>
 
-    <section>
-      <h2>さくらを詠んだ俳句</h2>
+      <!-- サブタイトル -->
+      <p class="sub_title">
+        <img src="images/circle.svg" alt=""><br>
+        <a href="https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B0%BE%E8%8A%AD%E8%95%89">松尾芭蕉</a>
+      </p>
 
-      <article>
-        <a href="https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E4%B8%80%E8%8C%B6">
-          <figure>
-            <img src="blog/images/ipponzakura.webp" alt="">
-          </figure>
-          <h3>穀つぶし　櫻の下に　くらしけり</h3>
-          <cite>小林一茶</cite>
-        </a>
-      </article>
-      <article>
-        <a href="https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%B3%80%E5%8D%83%E4%BB%A3%E5%A5%B3">
-          <figure>
-            <img src="blog/images/aozora_to_sakura.webp" alt="">
-          </figure>
-          <h3>影は滝 空は花なり 糸桜</h3>
-          <cite>加賀千代女</cite>
-        </a>
-      </article>
-      <article>
-        <a href="https://ja.wikipedia.org/wiki/%E9%AB%98%E6%B5%9C%E8%99%9A%E5%AD%90">
-          <figure>
-            <img src="blog/images/yamazakura.webp" alt="">
-          </figure>
-          <h3>徐ろに 眼を移しつつ 初桜</h3>
-          <cite>高浜虚子</cite>
-        </a>
-      </article>
-      <article>
-        <a href="https://ja.wikipedia.org/wiki/%E6%AD%A3%E5%B2%A1%E5%AD%90%E8%A6%8F">
-          <figure>
-            <img src="blog/images/sakura_tabidachi.webp" alt="">
-          </figure>
-          <h3>観音の 大悲の桜 咲きにけり</h3>
-          <cite>正岡子規</cite>
-        </a>
-      </article>
-      <article>
-        <a href="https://ja.wikipedia.org/wiki/%E5%AE%A4%E7%94%9F%E7%8A%80%E6%98%9F">
-          <figure>
-            <img src="blog/images/mizuho_sakura.webp" alt="">
-          </figure>
-          <h3>さくら木に さくら一杯に つきにけり</h3>
-          <cite>室生犀星</cite>
-        </a>
-      </article>
-      <article>
-        <a href="https://ja.wikipedia.org/wiki/%E6%B3%89%E9%8F%A1%E8%8A%B1">
-          <figure>
-            <img src="blog/images/sakura_mejiro.webp" alt="">
-          </figure>
-          <h3>町内の 鶯来たり 朝櫻</h3>
-          <cite>泉鏡花</cite>
-        </a>
-      </article>
-    </section>
+      <section>
+        <h2>さくらを詠んだ俳句</h2>
+
+        <article>
+          <a href="https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E4%B8%80%E8%8C%B6">
+            <figure>
+              <img src="images/ipponzakura.webp" alt="">
+            </figure>
+            <h3>穀つぶし　櫻の下に　くらしけり</h3>
+            <cite>小林一茶</cite>
+          </a>
+        </article>
+        <article>
+          <a href="https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%B3%80%E5%8D%83%E4%BB%A3%E5%A5%B3">
+            <figure>
+              <img src="images/aozora_to_sakura.webp" alt="">
+            </figure>
+            <h3>影は滝 空は花なり 糸桜</h3>
+            <cite>加賀千代女</cite>
+          </a>
+        </article>
+        <article>
+          <a href="https://ja.wikipedia.org/wiki/%E9%AB%98%E6%B5%9C%E8%99%9A%E5%AD%90">
+            <figure>
+              <img src="images/yamazakura.webp" alt="">
+            </figure>
+            <h3>徐ろに 眼を移しつつ 初桜</h3>
+            <cite>高浜虚子</cite>
+          </a>
+        </article>
+        <article>
+          <a href="https://ja.wikipedia.org/wiki/%E6%AD%A3%E5%B2%A1%E5%AD%90%E8%A6%8F">
+            <figure>
+              <img src="images/sakura_tabidachi.webp" alt="">
+            </figure>
+            <h3>観音の 大悲の桜 咲きにけり</h3>
+            <cite>正岡子規</cite>
+          </a>
+        </article>
+        <article>
+          <a href="https://ja.wikipedia.org/wiki/%E5%AE%A4%E7%94%9F%E7%8A%80%E6%98%9F">
+            <figure>
+              <img src="images/mizuho_sakura.webp" alt="">
+            </figure>
+            <h3>さくら木に さくら一杯に つきにけり</h3>
+            <cite>室生犀星</cite>
+          </a>
+        </article>
+        <article>
+          <a href="https://ja.wikipedia.org/wiki/%E6%B3%89%E9%8F%A1%E8%8A%B1">
+            <figure>
+              <img src="images/sakura_mejiro.webp" alt="">
+            </figure>
+            <h3>町内の 鶯来たり 朝櫻</h3>
+            <cite>泉鏡花</cite>
+          </a>
+        </article>
+      </section>
+    </main>
+
     <!-- 写真の出典は ぱくたそ https://www.pakutaso.com/ より-->
     <!-- 作者名を右寄せに -->
     <style>
