@@ -33,6 +33,7 @@ form {
                 border-color 0.1s ease;
     box-shadow: none;
 
+    /* ホバー、フォーカス、必須属性時の装飾 */
     &:hover {
       background: var(--sakurairo);
       border-color: var(--botaniro);

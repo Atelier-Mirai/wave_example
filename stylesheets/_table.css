@@ -9,7 +9,7 @@ table {
   }
 
   th {
-    width: 5em;
+    width: 6em;
     text-align-last: justify; /* 均等割付 */
     /* Safariで均等割付けしたい */
     div {

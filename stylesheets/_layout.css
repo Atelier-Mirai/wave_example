@@ -1,5 +1,8 @@
 /*=============================================================================
   ページ全体のレイアウト（部品配置）の設定
+
+  CSS Grid Generator
+  https://cssgrid-generator.netlify.app を用いて、作成することもできます。
 =============================================================================*/
 
 body.top {
@@ -7,23 +10,16 @@ body.top {
   grid-template:
     ".    head .   " 100px
     "main main main" auto
-    ".    foot .   " 140px /
+    "foot foot foot" 140px /
     20px  1fr  20px;
   row-gap: 20px;
 
   /* 画面幅が768px以上なら */
   @media (width >= 768px) {
-    /*
-    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
-    grid-template-rows: [head]      100px
-                        [title sub] auto
-                        [recent]    auto
-                        [foot]      auto;
-    column-gap: 5%; */
     grid-template:
       ".    head head head head head head .   " 100px
       "main main main main main main main main" auto
-      ".    foot foot foot foot foot foot .   " auto /
+      "foot foot foot foot foot foot foot foot" 140px /
       0.2fr 1fr  1fr  1fr  1fr  1fr  1fr  0.2fr;
     column-gap: 5%;
   }
@@ -34,6 +30,13 @@ body.top {
                 "Hiragino Sans",
                 Meiryo,
                 sans-serif;
+
+  /* 美しいグラデーション */
+  /* https://uigradients.com/#CoolSky */
+  background: linear-gradient(to top,
+                              #FFFFFF80,
+                              #6DD5FA40,
+                              #2980B980);
 
   height: 100vh;
 }

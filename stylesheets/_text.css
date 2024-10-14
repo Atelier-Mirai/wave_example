@@ -38,7 +38,11 @@
     width: 100%;
     height: 4px;
     content: '';
-    background-image: linear-gradient(135deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
+    background-image: linear-gradient(135deg,
+                                      #704308 0%,
+                                      #ffce08 40%,
+                                      #e1ce08 60%,
+                                      #704308 100%);
   }
 
   &::before { top: 0; }
@@ -46,7 +50,7 @@
 }
 
 /* 文字を光りながら出現させるためのCSS
----------------------------------------------------------------------*/
+---------------------------------------------------------------------*/ 
 .glow.text span {
   /* 初期値は透明 */
   opacity: 0;
@@ -61,3 +65,15 @@
    50% { opacity:1; text-shadow: 0 0 10px #fff, 0 0 15px #fff; }
   100% { opacity:1; text-shadow: 0 0    0 #fff, 0 0    0 #fff; }
 }
+
+/* 蛍光ペンのような文字の装飾
+   ほんの一手間で劇的に変わる HTML & CSS と Webデザイン 実践講座より
+---------------------------------------------------------------------*/
+.yellow.highlight {
+  background-image: linear-gradient(transparent 50%, #ffec47c0 50%); }
+
+.pink.highlight {
+  background-image: linear-gradient(transparent 50%, #e7609ec0 50%); }
+
+.blue.highlight {
+  background-image: linear-gradient(transparent 50%, #2ca9e1c0 50%); }

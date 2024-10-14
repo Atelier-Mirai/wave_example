@@ -3,7 +3,6 @@
 =============================================================================*/
 
 section {
-  /* grid-row: recent; */
   grid-area: recent;
   display: grid;
   grid-template-columns: 1fr 1fr;

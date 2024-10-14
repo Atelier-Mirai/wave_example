@@ -6,7 +6,6 @@
 .sub_title {
   grid-area: sub;
   text-align: center;
-
   /* 画面幅が768px以上なら */
   @media (width >= 768px) {
     align-self: center;
@@ -21,17 +20,18 @@
     display: inline-block;
     margin-block-start: 10px;
     border-radius: 10px;
-    background: #555d6b80; /* 背景色を半透明に。16進表記も可能 */
-    /* グラデーションにもできる */
-    background: linear-gradient(45deg, var(--amairo), var(--utsushiiro)); /* 天色から移色 */
+    /* 背景色を半透明に。16進表記も可能 */
+    background: #555d6b80;
+    /* 天色から移色へのグラデーション */
+    background: linear-gradient(45deg, var(--amairo), var(--utsushiiro));
 
     /* マウスカーソルを重ねたときに、色や大きさを変える */
     &:hover {
-      background: var(--shinonomeiro);
-      scale: 1.2;
-      rotate: -5deg;
+      background: var(--shinonomeiro);     /* 背景は東雲色 */
+      scale: 1.2;                          /* 少し拡大する */
+      rotate: -5deg;                       /* 少し傾ける */
       /* transition: property duration timing-function delay; */
-      transition: all 0.5s ease-in-out 0s;
+      transition: all 0.5s ease-in-out 0s; /* 少し時間をかけて変化させる */
     }
   }
 

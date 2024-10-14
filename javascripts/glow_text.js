@@ -17,7 +17,7 @@ const addShineClassName = () => {
   })
 }
 
-// ページ読み込み時に、addShineClassName関数が実行されるよう、イベントリスナを設定
+// ページ読み込み時、addShineClassName関数を実行するよう、イベントリスナを設定
 window.addEventListener("load", () => {
   document.querySelectorAll(".glow.text").forEach((element, index) => {
     let text                = element.textContent

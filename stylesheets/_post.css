@@ -2,13 +2,14 @@
   記事ページの為の装飾いろいろ
 =================================================*/
 
+/* レイアウト */
 body.post {
   display: grid;
   grid-template:
     ".    head    .   " 100px
     ".    main    .   " auto
-    ".    submenu .   " auto
-    ".    foot    .   " 140px /
+    ".    sidebar .   " auto
+    "foot foot    foot" 140px /
     20px  1fr     20px;
   row-gap: 20px;
 
@@ -45,6 +46,7 @@ body.post {
   }
 }
 
+/* 投稿記事 */
 .post main {
   grid-area: main;
 
@@ -78,7 +80,7 @@ body.post {
   }
 }
 
-/* サブメニュー */
+/* サイドバー */
 .post .sidebar {
   grid-area: sidebar;
 
