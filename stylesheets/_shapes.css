@@ -14,6 +14,8 @@
 /* 楕円形にする */
 /* ほんの一手間で劇的に変わる HTML & CSS と Webデザイン 実践講座より */
 .oval {
+  width: 120px;
+  height: 120px;
                  /* top-left top-right bottom-left bottom-right */
   border-radius:    40%      70%       50%         30%    /* 横の値 */
                   / 50%      50%       50%         50%;   /* 縦の値 */

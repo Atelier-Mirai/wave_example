@@ -18,7 +18,7 @@ body.post {
     grid-template:
       ".    head head head head head    head    .    " 100px
       ".    main main main main sidebar sidebar .    " auto
-      ".    foot foot foot foot foot    foot    .    " auto /
+      "foot foot foot foot foot foot    foot    foot " auto /
       0.2fr 1fr  1fr  1fr  1fr  1fr     1fr     0.2fr;
     column-gap: 5%;
   }
