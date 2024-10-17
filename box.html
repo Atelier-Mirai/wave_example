@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- サイトに関する設定事項を記述します -->
+  <head>
+    <!-- 文字コードの指定 -->
+    <meta charset="utf-8">
+    <!-- ページのタイトル -->
+    <title>Box Sizing</title>
+
+    <!-- 装飾指定 -->
+    <style>
+      /* 幅や高さは、要素のコンテンツのサイズのみを指定、
+         ボーダーやパディングは、幅や高さに加算される。 */
+      .content-box { box-sizing: content-box; }
+      /* 幅や高さに、ボーダーやパディングを含む。
+         そのため、要素サイズを制御し易い*/
+      .border-box  { box-sizing: border-box; }
+
+      /* <h2>中見出し要素への装飾指定 */
+      h2 {
+        width: 300px;                  /* 幅を300pxに指定 */
+        height: 200px;                 /* 高さを200pxに指定 */
+        margin: 10px;                  /* マージン（外側の余白） */
+        border: 20px solid yellow;     /* ボーダー（枠線） */
+                                       /* 太さ20pxの実線で黄色 */
+        padding: 30px;                 /* パディング（内側の余白） */
+        background: cyan;              /* 背景は水色に指定 */
+        background-clip: content-box;  /* 背景の描画領域を指定 */
+                                       /* コンテンツのみ描画するよう指定 */
+        color: red;                    /* 文字色を赤に指定 */
+        text-align: center;            /* 文字配置を中央揃えに指定 */
+      }
+    </style>
+  </head>
+
+  <!-- 表示したい内容・出し物・コンテンツを記述します -->
+  <body>
+    <h1>Box Sizing 練習</h1>
+    <h2 class="content-box">content-box</h2>
+    <h2 class="border-box">border-box</h2>
+  </body>
+</html>

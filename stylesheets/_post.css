@@ -4,6 +4,8 @@
 
 /* レイアウト */
 body.post {
+  /* overflow: hidden; */
+
   display: grid;
   grid-template:
     ".    head    .   " 100px
@@ -30,7 +32,7 @@ body.post {
                 Meiryo,
                 sans-serif;
 
-  height: 100vh;
+  min-height: 100vh;
 
   /* 区切り線 */
   &::before {
@@ -44,6 +46,8 @@ body.post {
       margin-block-start: -20px;
     }
   }
+
+  /* overflow: hidden; */
 }
 
 /* 投稿記事 */
@@ -53,10 +57,10 @@ body.post {
   /* 投稿記事 */
   article {
     /* 配下の要素の余白指定 */
-    > * {
+    /* > * {
       margin-block: 1em;
       display: block;
-    }
+    } */
 
     /* 見出し */
     h1 {
