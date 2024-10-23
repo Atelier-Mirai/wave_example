@@ -1,12 +1,5 @@
-// ようこそボタンを取得
-const welcomeButton = document.querySelector("#welcome")
-
-// イベントリスナを設定
-// welcomeボタンを押すと、hello関数が実行される
-welcomeButton.addEventListener("click", hello, false)
-
 // こんにちは 関数の定義
-function hello() {
+const hello = () => {
   // h1要素を取得
   const h1 = document.querySelector("h1")
   // h1 の中身
@@ -24,3 +17,10 @@ function hello() {
     h1.textContent = "おはようございます。JavaScript!"
   }
 }
+
+// ようこそボタンを取得
+const welcomeButton = document.querySelector("#welcome")
+
+// イベントリスナを設定
+// welcomeボタンを押すと、hello関数が実行される
+welcomeButton.addEventListener("click", hello, false)

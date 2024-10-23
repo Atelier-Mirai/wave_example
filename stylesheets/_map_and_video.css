@@ -5,39 +5,31 @@
 /* iPhone では、一列 x 二行 で配置します */
 .map-container,
 .video-container {
-  display: grid !important;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
+  display: grid;
+  grid-template:
+    "note   " auto
+    "content" auto /
+    1fr;
   gap: 10px;
   @media (width >= 768px) {
     /* iPad や Mac では、二列 x 一行 で配置します */
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
+    grid-template:
+      "content note" auto /
+       2fr     1fr;
   }
 
-  /* 紹介文章を一行目に表示します */
+  /* 紹介文章を配置します */
   .note {
-    grid-column: 1;
-    grid-row: 1;
-    @media (width >= 768px) {
-      /* 紹介文章を二列目に表示します */
-      grid-column: 2;
-      grid-row: 1;
-    }
+    grid-area: note;
   }
 
-  /* 地図や動画をニ行目に表示します */
+  /* 地図や動画を配置します */
   .map,
   .video {
-    grid-column: 1;
-    grid-row: 2;
+    grid-area: content;
     /* iPhone では、縦長(横2に対して縦3の比率)で表示します */
     aspect-ratio: 2 / 3;
-
     @media (width >= 768px) {
-      /* 地図や動画を一列目に表示します */
-      grid-column: 1;
-      grid-row: 1;
       /* iPad や Mac では、横長(横16に対して縦9の比率)で表示します */
       aspect-ratio: 16 / 9;
     }

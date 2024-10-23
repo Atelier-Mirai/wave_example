@@ -3,9 +3,12 @@
   モバイル版・デスクトップ版 共通の設定
 =============================================================================*/
 header  {
-  /* grid-row: head; */
   grid-area: head;
   justify-self: center;
+  /* 画面幅が768px以上なら */
+  @media (width >= 768px) {
+    justify-self: start;
+  }
   align-self: center;
   font-family: "Yuji Boku", serif;
 
@@ -31,14 +34,5 @@ header  {
   a {
     color: inherit;
     text-decoration: none;
-  }
-}
-
-/*=============================================================================
-  デスクトップ版
-=============================================================================*/
-@media (width >= 768px) {
-  header {
-    justify-self: start;
   }
 }

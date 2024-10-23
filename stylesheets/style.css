@@ -1,0 +1,83 @@
+/*=====================================================================
+  初めてのスタイルシート
+=====================================================================*/
+
+/* 基本設定(リセットCSS) */
+* {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* ページ全体の設定 */
+.top {
+  display: grid;
+  grid-template:
+    ".    head .   " 100px
+    "main main main" auto
+    "foot foot foot" 140px /
+    20px  1fr  20px;
+  row-gap: 20px;
+}
+
+.top main {
+  grid-area: main;
+  display: grid;
+  grid-template:
+    ".    title  .   " auto
+    ".    sub    .   " auto
+    ".    recent .   " auto /
+    20px  1fr    20px;
+  row-gap: 20px;
+}
+
+/* ヘッダー */
+header  {
+  grid-area: head;
+  justify-self: center;
+  align-self: center;
+}
+
+/* ナビゲーションメニュー */
+nav {
+  grid-area: head;
+  justify-self: center;
+  align-self: end;
+}
+
+/* ヒーローイメージ */
+.hero {
+  grid-column: 1 / -1;
+  grid-row: 1 / span 2;
+}
+
+/* タイトル（キャッチフレーズ） */
+.top h1 {
+  grid-area: title;
+  justify-self: center;
+  align-self: center;
+}
+
+/* サブタイトル */
+.sub_title {
+  grid-area: sub;
+  text-align: center;
+}
+
+/* 記事一覧 */
+#recent {
+  grid-area: recent;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 10px;
+}
+
+/* フッター */
+footer {
+  grid-area: foot;
+  justify-self: center;
+  align-self: center;
+}

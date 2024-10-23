@@ -1,20 +1,6 @@
 /*=============================================================================
   フッター
 =============================================================================*/
-
-/* 可変フォントサイズ */
-/* https://www.fluid-type-scale.com/calculate?minFontSize=12&minWidth=375&minRatio=1.25&maxFontSize=18&maxWidth=1280&maxRatio=1.333&steps=sm%2Cbase%2Cmd%2Clg%2Cxl%2Cxxl%2Cxxxl&baseStep=base&prefix=font-size&decimals=2&useRems=on&remValue=16&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=801 */
-
-:root {
-  --font-size-sm: clamp(0.6rem, 0.43vw + 0.5rem, 0.84rem);
-  --font-size-base: clamp(0.75rem, 0.66vw + 0.59rem, 1.13rem);
-  --font-size-md: clamp(0.94rem, 0.99vw + 0.7rem, 1.5rem);
-  --font-size-lg: clamp(1.17rem, 1.46vw + 0.83rem, 2rem);
-  --font-size-xl: clamp(1.46rem, 2.12vw + 0.97rem, 2.66rem);
-  --font-size-xxl: clamp(1.83rem, 3.04vw + 1.12rem, 3.55rem);
-  --font-size-xxxl: clamp(2.29rem, 4.32vw + 1.28rem, 4.73rem);
-}
-
 footer {
   /* 自身の配置指定 */
   grid-area: foot;
