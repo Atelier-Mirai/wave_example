@@ -20,7 +20,7 @@ const addShineClassName = () => {
 // ページ読み込み時、addShineClassName関数を実行するよう、イベントリスナを設定
 window.addEventListener("load", () => {
   document.querySelectorAll(".glow.text").forEach((element, index) => {
-    let text                = element.textContent
+    let text                = element.textContent.trim()
     let delay_initial_value = 0 + (index * text.length * DELAY_TIME)
     let textbox             = ""
     text.split("").forEach((t, i) => {
