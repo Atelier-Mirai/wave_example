@@ -2,14 +2,34 @@
   写真の枠とその効果
 =============================================================================*/
 .frame {
-  border: 8px solid #fff;
+  border: 8px solid var(--sakurairo); /* 桜色の枠線を付ける */
   /* 二つの影を付けることもできる */
-  box-shadow: 0 0 0 1px #ccc,
+  box-shadow: 0 0 0 1px #ccc,         /* 灰色と黒い影を付ける */
               1px 3px 8px 0 #25252555;
 
   &.sepia img {
     /* セピア色にする */
     filter: sepia(80%);
+  }
+
+  &.monochrome img {
+    /* 写真を白黒にする */
+    filter: grayscale(90%);
+  }
+
+  &.frame img {
+    /* 写真をぼかす */
+    filter: blur(3px);
+  }
+
+  &.frame img {
+    /* 写真の色を反転させる */
+    filter: invert(75%);
+  }
+
+  &.frame img {
+    /* 写真を少し透明にする */
+    filter: opacity(67%);
   }
 
   &.rotate3 {
