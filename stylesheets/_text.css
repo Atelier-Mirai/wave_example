@@ -50,14 +50,17 @@
 }
 
 /* 文字を光りながら出現させるためのCSS
----------------------------------------------------------------------*/ 
-.glow.text span {
-  /* 初期値は透明 */
-  opacity: 0;
-}
-.glow.text.shine span {
-  /* アニメーションで透過度を0から1に変化させ、text-shadowをつける */
-  animation: glow_anime_on 1s ease-out forwards;
+---------------------------------------------------------------------*/
+.glow.text {
+  span {
+    /* 初期値は透明 */
+    opacity: 0;
+  }
+
+  &.shine span {
+    /* アニメーションで透過度を0から1に変化させ、text-shadowをつける */
+    animation: glow_anime_on 1s ease-out forwards;
+  }
 }
 
 @keyframes glow_anime_on {
