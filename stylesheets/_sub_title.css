@@ -12,13 +12,14 @@
   }
 
   a {
+    margin-block-start: 10px;
+
     color: var(--sakurairo);
     text-decoration: none;
 
     border: solid 1px var(--sakurairo);
     padding: 10px 40px;
     display: inline-block;
-    margin-block-start: 10px;
     border-radius: 10px;
     /* 背景色を半透明に。16進表記も可能 */
     background: #555d6b80;

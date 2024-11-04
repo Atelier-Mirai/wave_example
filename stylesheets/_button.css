@@ -1,40 +1,35 @@
 /*=====================================================================
   ボタンの為のCSS
+
+  CSSボタンデザイン120個以上！どこよりも詳しく作り方を解説
+  https://jajaaan.co.jp/css/button/
+
+  シンプルで使いやすい HTML・CSSボタンデザイン集11選
+  https://ics.media/entry/230629/
 =====================================================================*/
 
 .button {
-  /* 最小値 16px (画面幅375px) */
-  /* 最大値 24px (画面幅768px) */
-  /* clamp 関数により 可変フォントサイズを指定する */
-  font-size: clamp(1rem, 0.523rem + 2.036vw, 1.5rem);
-  font-weight: bold;
-  line-height: 1.5;
   position: relative;
-  display: inline-block;
+  text-decoration: none;
+
+  font-size: clamp(10px, 2vw, 16px); /* 可変フォントサイズの指定 */
   padding: 0.8rem 1.2rem;
-  cursor: pointer;
-  user-select: none;
   transition: all 0.3s;
   text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
   letter-spacing: 0.1em;
   color: #212529;
   border-radius: 0.5rem;
+  display: inline-block;
+
+  a {
+    text-decoration: none;
+  }
 }
-
-
-/* CSSボタンデザイン120個以上！どこよりも詳しく作り方を解説！ */
-/* https://jajaaan.co.jp/css/button/ */
 
 /* ボタンの基本形 */
 .simple.button {
   color: var(--sakurairo);
-  text-decoration: none;
   border: solid 1px var(--sakurairo);
-  padding: 10px 40px;
-  display: inline-block;
-  margin-block-start: 10px;
   border-radius: 10px;
   background: #555d6b80;
 
@@ -46,28 +41,23 @@
 /* グラデーションボタン */
 .gradient.button {
   color: #fff;
-  border-radius: 100vh;
+  border-radius: 50vh;
   background-image: linear-gradient(-20deg,
                                     #e9defa 0%,
                                     #fbfcdb 100%);
 
   span {
-    position: relative;
-    z-index: 1;
-    width: 50vw;
-    display: inline-block;
-
     background-image: linear-gradient(-225deg,
                                       #231557 0%,
                                       #44107a 33%,
                                       #ff1361 67%,
                                       #fff800 100%);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   &:hover {
-    filter: drop-shadow(0 0 20px var(--nanohanairo));
+    filter: drop-shadow(0 0 20px var(--nanohanairo)); /* 影を付ける */
   }
 }
 
@@ -99,5 +89,74 @@
     border-right:  4px solid #cea82c;
     border-bottom: 7px solid #987c1e;
     border-left:   4px solid #ffed8b;
+  }
+}
+
+/* 正円ボタン */
+.circle.button {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px #00000040;
+
+  i {
+    line-height: 55px;
+    &:hover {
+      line-height: 60px;
+    }
+  }
+}
+
+/* 漆に金の高級ボタン */
+.gold.urushi {
+  border: none;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(
+    135deg,
+    #704308 0%,
+    #ffce08 37%,
+    #fefeb2 47%,
+    #fafad6 50%,
+    #fefeb2 53%,
+    #e1ce08 63%,
+    #704308 100%
+  );
+
+  a {
+    display: inline-block;
+    line-height: 1.5;
+    background: #0a0017; /* 漆色 */
+    vertical-align: middle;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    span {
+      background: linear-gradient(to top, #ffffdb, #a16422);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &:hover a {
+    text-shadow: 0 0 15px #fafad680, 0 0 15px #fafad680, 0 0 15px #fafad680, 0 0 15px #fafad680;
+  }
+}
+
+/* ふわふわボタン */
+.fuwafuwa.button {
+  padding: 1rem 1.33rem;
+  color: white;
+  /* パステルカラーのグラデーション 三種類 */
+  background: linear-gradient(-45deg, #fca1a1 40%, #fcfc5d 100%);
+  background: linear-gradient(315deg, #fca1a1 40%, #fcfc5d 100%);
+  background: linear-gradient(135deg, #fca1a1 40%, #fcfc5d 100%);
+  box-shadow: 30px 10px 0 #fefeb3;
+
+  /* https://developer.mozilla.org/ja/docs/Web/CSS/border-radius */
+  border-radius: 100% 80px / 80px 100%;
+  &:hover {
+    border-radius: 60% 80% / 100% 80%;
   }
 }

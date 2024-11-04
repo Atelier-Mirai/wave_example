@@ -1,20 +1,20 @@
 // こんにちは 関数の定義
 const hello = () => {
-  // h1要素を取得
-  const h1 = document.querySelector("h1")
+  // #aisatsu要素(element)を取得
+  const element = document.querySelector("#aisatsu")
   // h1 の中身
-  let aisatsu = h1.textContent
+  let aisatsu = element.textContent
 
   // 条件分岐
   if (aisatsu === "おはようございます。JavaScript!") {
     // こんにちは に設定する
-    h1.textContent = "こんにちは。JavaScript!"
+    element.textContent = "こんにちは。JavaScript!"
   } else if (aisatsu === "こんにちは。JavaScript!") {
     // おやすみ に設定する
-    h1.textContent = "おやすみ。JavaScript!"
+    element.textContent = "おやすみ。JavaScript!"
   } else {
     // おはよう に設定する
-    h1.textContent = "おはようございます。JavaScript!"
+    element.textContent = "おはようございます。JavaScript!"
   }
 }
 

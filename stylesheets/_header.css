@@ -26,7 +26,6 @@ header  {
     #0068B7 0.5em 0.6em,
     #1d2088 0.7em 0.8em,
     #cfa7cd 0.8em 0.9em);
-  -webkit-background-clip: text;
   background-clip: text;
   font-weight: bold;
   letter-spacing: 10px;

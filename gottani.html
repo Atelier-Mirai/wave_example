@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- サイトに関する設定事項を記述します -->
+  <head>
+    <!-- 文字コードの指定 -->
+    <meta charset="utf-8">
+
+    <!-- ページのタイトル -->
+    <title>ごった煮</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+
+    <!-- スタイル設定 -->
+    <style>
+      /* 色の定義
+      ---------------------------------------------------------------------*/
+      @import "stylesheets/_colors.css";
+
+      /* ナビゲーションメニュー
+      ---------------------------------------------------------------------*/
+      /* ボタンの為のCSSを読み込む */
+      @import "stylesheets/_button.css";
+      ul {
+        list-style: none;
+        display: grid;
+        grid-auto-flow: column;
+      }
+
+      /* 余白を無しに （リセットCSS）
+      ---------------------------------------------------------------------*/
+      * { margin: 0; }
+
+      /* section の装飾
+      ---------------------------------------------------------------------*/
+      section { height: 50vh; }
+      /* グラデーションの例 */
+      /* https://developer.mozilla.org/ja/docs/Web/CSS/CSS_images/Using_CSS_gradients */
+      section:nth-of-type(1) {
+        /* 線形グラデーション (Linear Gradient) */
+        background: linear-gradient(to right, #fef4f4, #f19072); }
+      section:nth-of-type(2) {
+        /* 縦方向の線形グラデーション */
+        background: linear-gradient(to bottom, var(--sakurairo), var(--nanohanairo)); }
+      section:nth-of-type(3) {
+        /* 複数色の線形グラデーション */
+        background: linear-gradient(-45deg, #ff7f50 15%, #1e90ff 30%, #32cd32 45%, #ff1493 60%); }
+      section:nth-of-type(4) {
+        /* 放射状グラデーション (Radial Gradient) */
+        background: radial-gradient(circle, var(--momijiiro), var(--sakurairo)); }
+      section:nth-of-type(5) {
+        /* 楕円形のグラデーション */
+        background: radial-gradient(
+          ellipse farthest-corner at 50% 80%,
+          red,
+          yellow 10%,
+          #1e90ff 50%,
+          beige); }
+      section:nth-of-type(6) {
+        /* 扇形のグラデーション */
+        background: conic-gradient(
+          at 0% 30%,
+          red 10%,
+          yellow 30%,
+          #1e90ff 50%); }
+
+      /* スムーススクロールの為に
+      ---------------------------------------------------------------------*/
+      html {
+        scroll-behavior: smooth;  /* ゆっくり遷移する */
+        scroll-padding-top: 100px; /* 上にヘッダーの高さ100px分だけ空ける */
+        overflow: scroll;
+      }
+
+      /* ヘッダーとフッターは必ず表示されるようにする
+      ---------------------------------------------------------------------*/
+      header,
+      footer {
+        position: sticky;
+        /* スクロール位置に達した時に固定される */
+        top: 0;
+        background: var(--sakurairo);
+        padding: 10px;
+        z-index: 1; /* 他の要素の上に表示されるように */
+
+        list-style: none;
+        display: grid;
+        grid-auto-flow: column;
+      }
+
+      footer {
+        /* スクロール位置に達した時に固定される */
+        bottom: 0;
+        text-align: center;
+      }
+
+      /* グリッドレイアウト
+      ---------------------------------------------------------------------*/
+      body {
+        display: grid;
+        grid-template:
+          "header " 100px
+          "main   " auto
+          "footer " 45px /
+          auto;
+      }
+      header { grid-area: header; }
+      nav    { grid-area: nav; }
+      main   { grid-area: main; }
+      footer { grid-area: footer; }
+
+      /* ぴたっと止まるようにする (不要ならコメントアウト)
+      ---------------------------------------------------------------------*/
+      main {
+        height: calc(100vh - 100px - 45px);
+        scroll-snap-type: y mandatory;
+        overflow: scroll;
+      }
+      section { scroll-snap-align: start; }
+    </style>
+  </head>
+
+  <!-- 表示したい内容・出し物・コンテンツを記述します -->
+  <body>
+    <!-- ヘッダー(サイト名) -->
+    <header>
+      <button type="button" name="button">
+        <a href="index.html">戻る</a>
+      </button>
+
+      <!-- ナビゲーションメニュー -->
+      <nav>
+        <ul>
+          <!-- ページ内リンク #section1へ跳ぶ -->
+          <li><a href="#section1" class="simple button">
+              <span>Section 1</span></a></li>
+          <li><a href="#section2" class="gradient button">
+              <span>Section 2</span></a></li>
+          <li><a href="#section3" class="gold button">
+              <span>Section 3</span></a></li>
+          <li><a href="#section4" class="circle button">
+              <i class="fas fa-arrow-down"></i></a></li>
+          <li><button class="gold urushi">
+              <a href="#section5">
+                <span>Section 5</span></a></button></li>
+          <li><a href="#section6" class="fuwafuwa button">Section 6</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 主要なコンテンツ -->
+    <main>
+      <section id="section1">
+        <h1>ごった煮</h1>
+        <p>
+          いろいろ紹介しています。
+          <ul style="list-style-type: '\1F338';">
+            <li>「🌸」印の箇条書き項目</li>
+            <li>様々なボタン</li>
+            <li>固定ヘッダーとフッター</li>
+            <li>様々なグラデーション</li>
+            <li>スムーズスクロールとぴたっとスクロール</li>
+            <li>縦書き</li>
+          </ul>
+        </p>
+      </section>
+      <section id="section2" style="writing-mode: vertical-rl; block-size: 100%;">
+        <h2>第二章</h2>
+        <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波<br>
+        またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。</p>
+      </section>
+      <section id="section3"><h2>Section 3</h2></section>
+      <section id="section4"><h2>Section 4</h2></section>
+      <section id="section5"><h2>Section 5</h2></section>
+      <section id="section6"><h2>Section 6</h2></section>
+    </main>
+
+    <footer>
+      &copy; WAVE
+    </footer>
+  </body>
+</html>

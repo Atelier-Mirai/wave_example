@@ -47,11 +47,71 @@
       /* color: green; */
     }
     </style>
+
+
   </head>
-  
+
   <body>
     <h1 id="h1" class="special">
       CSSレイヤ練習
     </h1>
+
+    <!-- アコーディオン -->
+    <!-- https://ics.media/entry/220901/ -->
+    <details>
+      <summary>コードを見る</summary>
+      <pre>
+        <code>
+          &lt;h1 id="h1" class="special"&gt;
+            CSSレイヤ練習
+          &lt;/h1&gt;
+        </code>
+        
+        <code>
+          @layer reset;     /* resetという名前の最初のレイヤを作成        */
+          @layer base;      /* baseという名前の2番目のレイヤを作成        */
+          @layer theme;     /* themeという名前の3番目のレイヤを作成       */
+          @layer utilities; /* utilitiesという名前の4番目のレイヤを作成   */
+          /* @layer reset, base, theme, utilities; とも記述できる         */
+          /* 最初のresetレイヤが最も弱く、最後のutilitiesレイヤが最も強い */
+
+          @layer reset, base, theme, utilities;
+
+
+          /* リセット用のスタイル */
+          @layer reset {
+            * {
+              margin: 0;
+            }
+          }
+
+          /* ベース用のスタイル */
+          @layer base {
+            h1 {
+              color: black;
+            }
+          }
+
+          /* テーマ用のスタイル */
+          @layer theme {
+            #h1 {
+              color: skyblue;
+            }
+          }
+
+          /* ユーティリティ用のスタイル */
+          @layer utilities {
+            .special {
+              color: rebeccapurple;
+            }
+          }
+
+          /* レイヤの外に書かれたCSSが最も強い */
+          h1 {
+            /* color: green; */
+          }
+        </code>
+      </pre>
+    </details>
   </body>
 </html>

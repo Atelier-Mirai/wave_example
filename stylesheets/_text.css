@@ -34,7 +34,7 @@
   &::before,
   &::after {
     position: absolute;
-    left: 0;
+    inset-inline-start: 0;
     width: 100%;
     height: 4px;
     content: '';
@@ -45,8 +45,8 @@
                                       #704308 100%);
   }
 
-  &::before { top: 0; }
-  &::after  { bottom: 0; }
+  &::before { inset-block-start: 0; }
+  &::after  { inset-block-end: 0; }
 }
 
 /* 文字を光りながら出現させるためのCSS
