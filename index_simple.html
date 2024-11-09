@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- サイトに関する設定事項を記述します -->
+  <head>
+    <!-- 文字コードの指定 -->
+    <meta charset="utf-8">
+    <!-- ページのタイトル -->
+    <title>WAVE</title>
+    <!-- ビューポート(視点)の指定 -->
+    <meta name="viewport" content="width=device-width">
+    <!-- 自分で作ったスタイルシート -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <!-- 表示したい内容・出し物・コンテンツを記述します -->
+  <body class="top">
+    <!-- ヘッダー(サイト名) -->
+    <header><a href="index.html">WAVE</a></header>
+
+    <!-- ナビゲーションメニュー -->
+    <nav>
+      <ul>
+        <li><a href="#recent">最新記事</a></li>
+        <li><a href="about.html">サイトについて</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+    <!-- 主要なコンテンツ -->
+    <main>
+      <!-- ヒーローイメージ -->
+      <figure class="hero">
+        <img src="images/blue_sea_1920x1280.webp"
+             alt="世界で一番の観光地">
+      </figure>
+
+      <!-- キャッチフレーズ -->
+      <h1 class="glow text">
+        Best place to visit in the world
+      </h1>
+
+      <!-- サブタイトル -->
+      <p class="sub_title">
+        <img src="images/circle.svg" alt=""><br>
+        <a href="#">爽やかな青い空と海</a>
+      </p>
+
+      <!-- 記事一覧 -->
+      <section id="recent">
+        <h2 class="title">最新記事</h2>
+        <article>
+          <a href="post01.html">
+            <figure>
+              <img src="images/note.webp" alt="">
+            </figure>
+            <h3>スケッチが楽しくなるノート</h3>
+          </a>
+        </article>
+        <article>
+          <a href="post02.html">
+            <figure>
+              <img src="images/plant.webp" alt="">
+            </figure>
+            <h3>緑のアクセントならこれ</h3>
+          </a>
+        </article>
+        <article>
+          <a href="post03.html">
+            <figure>
+              <img src="images/items.webp" alt="">
+            </figure>
+            <h3>小物と飾り棚の組み合わせ</h3>
+          </a>
+        </article>
+        <article>
+          <a href="post04.html">
+            <figure>
+              <img src="images/chair.webp" alt="">
+            </figure>
+            <h3>居心地のいい部屋にあるもの</h3>
+          </a>
+        </article>
+      </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+      <!-- ページの先頭にスムーズスクロール -->
+      <p id="page_top">
+        <!-- 金色のボタン -->
+        <a href="#" class="gold button">
+          <span>
+            <i class="fa-solid fa-angles-up fa-lg fa-fw"></i>
+            <span class="computer only">Page Top</span>
+          </span>
+        </a>
+      </p>
+      <!-- 連絡先 -->
+      <address>
+        <!-- 会社名 -->
+        <p class="company_name">(有) WAVE商会</p>
+        <!-- 住所 -->
+        <p class="address">名古屋市美波区美波町三丁目七番三号</p>
+        <!-- 電話番号 -->
+        <p class="tel">
+          <a href="tel:052-373-4649">
+            <i class="fa-solid fa-phone fa-rotate-90 fa-lg"></i>
+            052-373-4649
+          </a>
+        </p>
+        <!-- メールアドレス -->
+        <p class="email">
+          <a href="mailto:contact@wave.example.jp">
+            <i class="fa-regular fa-envelope fa-lg"></i>
+            contact@wave.example.jp
+          </a>
+        </p>
+      </address>
+      <!-- 著作権表示 -->
+      <p class="copyright">
+        Copyright © 令和六年 WAVE All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>グリッドレイアウト練習</title>
+
+    <style>
+      .container {
+        /* グリッドレイアウトすることを宣言 */
+        display: grid;
+
+        /* 3行 x 4列 のコンテナ（容れ物）を作る */
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows:    auto auto auto auto;
+
+        /* このように書くこともできる */
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows:    repeat(4, auto);
+
+        /* このように書くこともできる */
+        grid-template:
+          ".   .   ." auto
+          ".   .   ." auto
+          ".   .   ." auto
+          ".   .   ." auto /
+          1fr 1fr 1fr;
+
+        /* 配置を指定する */
+        /* アイテムを均等に配置し
+           コンテナに合うようにサイズ「自動」の
+           アイテムを引き伸ばす */
+        align-content: stretch;
+        /* アイテムを均等に配置し
+           最初のアイテムは先頭に寄せ、
+           最後のアイテムは末尾に寄せる */
+        /* align-content: space-between; */
+        /* アイテムを均等に配置し
+           各アイテムの両側に半分の大きさの間隔を置く */
+        /* align-content: space-around; */
+        /* アイテムを均等に配置し
+           各アイテムの周りに同じ大きさの間隔を置く */
+        /* align-content: space-evenly; */
+
+        /* アイテムを先頭にまとめる */
+        align-items: start;
+        /* アイテムを中央付近にまとめる */
+        align-items: center;
+        /* アイテムを末尾にまとめる */
+        align-items: end;
+        /* サイズ「自動」のアイテムを引き伸ばす */
+        align-items: stretch;
+
+        column-gap: 10px;         /* 列の間隔を設定 */
+        width:  600px;            /* 幅を設定 */
+        height: 600px;            /* 高さを設定 */
+        border: 5px solid lime;   /* 緑色の枠線を設定 */
+      }
+
+      .item {
+        background: lightcyan;    /* 水色の背景を設定 */
+        border: 2px solid blue;   /* 青色の枠線を設定 */
+      }
+
+      /* 微調整 */
+      body { padding: 50px; }
+      h1   { margin: 1em; }
+    </style>
+  </head>
+
+  <body>
+    <h1>グリッドレイアウト練習</h1>
+
+    <div class="container">
+      <!-- 各アイテムの配置を個別指定 -->
+      <p class="item" style="align-self: start;">あさがお<br>align-self: start</p>
+      <p class="item" style="align-self: center">かんな<br>align-self: center</p>
+      <p class="item" style="align-self: end">さくら<br>align-self: end</p>
+      <p class="item" style="align-self: stretch">たんぽぽ<br>align-self: stretch</p>
+      <!-- これらは個別指定がないので、
+           align-items による 全体指定が有効になっている -->
+      <p class="item">なばな<br>align-items: stretch</p>
+      <p class="item">はまゆう<br>align-items: stretch</p>
+      <p class="item">まつりか<br>align-items: stretch</p>
+    </div>
+  </body>
+</html>
