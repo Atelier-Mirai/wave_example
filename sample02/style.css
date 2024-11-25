@@ -1,0 +1,10 @@
+@import "_layout.css";
+@import "_header.css";
+@import "_section.css";
+@import "_footer.css";
+
+/* Safari */
+img {
+  width: 100%;
+  height: 100%;
+}

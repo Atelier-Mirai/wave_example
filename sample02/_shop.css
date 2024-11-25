@@ -1,0 +1,32 @@
+/* ショップ情報 */
+.shop {
+  display: grid;
+  grid-template: auto auto / 100px 1fr;
+  gap: 5px 10px;
+  border: solid 1px #222;
+
+  img {
+    grid-area: 1 / 1 / -1 / 1;
+    max-width: 100px;
+  }
+
+  h3 {
+    grid-area: 1 / 2;
+    font-size: 12px;
+    align-self: end;
+    letter-spacing: 1px;
+  }
+
+  p {
+    grid-area: 2 / 2;
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+  }
+
+  span {
+    padding-inline: 5px;
+    border-radius: 10px;
+    background-color: #ddd;
+  }
+}

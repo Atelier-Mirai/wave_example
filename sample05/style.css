@@ -1,0 +1,180 @@
+.peel {
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  --side-horizontal:20px;
+  --side-vertical:40px;
+  display: grid;
+
+  grid-template: repeat(6, auto) / 1fr;
+  @media (width >= 768px) {
+    grid-template: 170px auto 100px / 1fr 1fr;
+  }
+
+  margin: var(--side-vertical) var(--side-horizontal);
+  font-family: "Noto Sans JP", sans-serif;
+
+
+  &::after {
+    grid-area: 4 / 1 / -1 / 1;
+    z-index: -1;
+    content: "";
+    background: #222;
+    margin-inline: calc(-1 * var(--side-horizontal));
+    margin-block-end: calc(-1 * var(--side-vertical));
+  }
+
+  @media (width >= 768px) {
+    &::after {
+      grid-area: 1 / 1 / -1 / 1;
+      margin-inline-start: calc(-1 * var(--side-horizontal));
+      margin-inline-end: unset;
+      margin-block: calc(-1 * var(--side-vertical));
+    }
+  }
+
+  @media (width >= 1024px) {
+    --side-horizontal:calc( (100vw - 960px) / 2 );
+  }
+}
+
+/* 画像 */
+.photo {
+  grid-area: 3 / 1 / 5 / 1;
+  width: 80%;
+  margin-block: 30px;
+  place-self: center;
+
+  @media (width >= 768px) {
+    grid-area: 2 / 1 / 2 / -1;
+    place-self: center;
+    width: 60%;
+    margin-block: unset;
+  }
+}
+
+/* 日本語のテキスト */
+.jp {
+  grid-area: 1 / 1;
+  writing-mode: horizontal-tb;
+  @media (width >= 768px) {
+    grid-area: 1 / 2 / 3/ 2;
+    place-self: start end;
+    writing-mode: vertical-rl; /* 縦書き */
+  }
+
+  /* テキストのグリッド */
+  display: grid;
+  row-gap: 15px;
+
+  h2 {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.2;
+    word-break: keep-all;  /* <wbr>で適宜改行 */
+  }
+
+  p {
+    &:nth-of-type(1) {
+      font-size: 16px;
+      font-weight: 700;
+      color: #444;
+    }
+
+    &:nth-of-type(2) {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
+      height: auto;
+    }
+    @media (width >= 768px) {
+      &:nth-of-type(2) {
+        height: 12em;
+      }
+    }
+  }
+}
+
+/* 日本語のメモ */
+.jp-memo {
+  grid-area: 2 / 1;
+  justify-self: stretch;
+  width: auto;
+  margin-block-start: 15px;
+  @media (width >= 768px) {
+    grid-area: 3 / 2;
+    place-self: end;
+    width: 200px;
+    margin-block-start: unset;
+  }
+
+  padding: 10px;
+  border: solid 1px #aaa;
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+/* 英語のテキスト */
+.en {
+  grid-area: 5 / 1;
+
+  @media (width >= 768px) {
+    grid-area: 1 / 1/ 3 / 1;
+    place-self: start;
+  }
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+
+  /* テキストのグリッド */
+  display: grid;
+  row-gap: 15px;
+
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  p {
+    &:nth-of-type(1) {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    &:nth-of-type(2) {
+      font-size: 14px;
+      font-weight: 300;
+      width: auto;
+    }
+    @media (width >= 768px) {
+      &:nth-of-type(2) {
+        width: 50%;
+      }
+    }
+
+  }
+}
+
+/* 英語のメモ */
+.en-memo {
+  grid-area: 6 / 1;
+  justify-self: stretch;
+  width: auto;
+  margin-block-start: 15px;
+
+  @media (width >= 768px) {
+    grid-area: 3 / 1;
+    place-self: end start;
+    width: 200px;
+    margin-block-start: unset;
+  }
+  padding: 10px;
+  border: solid 1px #aaa;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.5;
+}

@@ -1,0 +1,40 @@
+/*=============================================================================
+  ヘッダー
+=============================================================================*/
+
+header  {
+  grid-area: head;      /* 配置先の指定 */
+  justify-self: center; /* 水平方向に自身の配置を指定 */
+  /* 画面幅が768px以上なら */
+  /* @media (width >= 768px) {
+    justify-self: start;
+  } */
+  align-self: center;    /* 水平方向に自身の配置を指定 */
+  font-family: "Yuji Boku", serif;  /* 書体の指定 */
+
+  font-size: 40px;       /* 文字の大きさの指定 */
+  /* 画面幅に応じて可変するフォントサイズ */
+  /* font-size: clamp(48px, 12vw, 54px); */
+
+  /* 文字の色 */
+  color: #12b527;        /* 文字の色の指定 */
+  /* グラデーション */
+  /* CSSでテキストを彩る装飾サンプル集 https://1-notes.com/css-text-design/ */
+  /* color: transparent;
+  background: repeating-linear-gradient(45deg,
+    #e60012 0.1em 0.2em,
+    #f39800 0.2em 0.3em,
+    #fff100 0.3em 0.4em,
+    #009944 0.4em 0.5em,
+    #0068B7 0.5em 0.6em,
+    #1d2088 0.7em 0.8em,
+    #cfa7cd 0.8em 0.9em);
+  background-clip: text;
+  font-weight: bold;
+  letter-spacing: 10px; */
+
+  a {
+    color: inherit;         /* 文字の色は親の色を継承する */
+    text-decoration: none;  /* 文字の装飾の指定 */
+  }
+}

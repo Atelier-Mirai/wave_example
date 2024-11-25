@@ -1,0 +1,64 @@
+/*=============================================================================
+  ページ全体のレイアウト（部品配置）の設定
+
+  CSS Grid Generator
+  https://cssgrid-generator.netlify.app を用いて、作成することもできます。
+=============================================================================*/
+
+body.top {
+  display: grid;
+  grid-template:
+    ".    head .   " 100px
+    "main main main" auto
+    "foot foot foot" 140px /
+    20px  1fr  20px;
+  row-gap: 20px;
+
+  /* 画面幅が768px以上なら */
+  /* @media (width >= 768px) {
+    grid-template:
+      ".    head head head head head head .   " 100px
+      "main main main main main main main main" auto
+      "foot foot foot foot foot foot foot foot" 140px /
+      0.2fr 1fr  1fr  1fr  1fr  1fr  1fr  0.2fr;
+    column-gap: 5%;
+  } */
+
+  /* 書体の指定 */
+  font-family: "Helvetica Neue",
+                Arial,
+                "Hiragino Kaku Gotic ProN",
+                "Hiragino Sans",
+                Meiryo,
+                sans-serif;
+
+  /* 美しいグラデーション */
+  /* https://uigradients.com/#CoolSky */
+  background: linear-gradient(to top,
+                              #FFFFFF80,
+                              #6DD5FA40,
+                              #2980B980);
+
+  /* 高さをブラウザの画面の高さ丁度に指定 */
+  height: 100vh;
+}
+
+.top main {
+  grid-area: main;
+  display: grid;
+  grid-template:
+    ".    title  .   " auto
+    ".    sub    .   " auto
+    ".    recent .   " auto /
+    20px  1fr    20px;
+  row-gap: 20px;
+
+  /* 画面幅が768px以上なら */
+  /* @media (width >= 768px) {
+    grid-template:
+      ".    title  title  title  sub    sub    sub    .   " auto
+      ".    recent recent recent recent recent recent .   " auto /
+      0.2fr 1fr    1fr    1fr    1fr    1fr    1fr    0.2fr;
+    column-gap: 5%;
+  } */
+}

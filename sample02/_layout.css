@@ -1,0 +1,49 @@
+/* グリッド */
+.post {
+  display: grid;
+
+  --side: 20px;
+  grid-template: auto 40px auto 50px auto 50px auto 40px auto / var(--side) 1fr var(--side);
+
+  @media (width >= 768px) {
+    grid-template: auto 30px auto 40px auto 30px auto / var(--side) 1fr 50px 1fr var(--side);
+  }
+
+  @media (width >= 1024px) {
+    --side: calc( (100vw - 960px) / 2 );
+    grid-template: auto 30px auto 40px auto 30px auto / var(--side) 1fr 50px 1fr var(--side);
+  }
+
+  font-family: "Hiragino Kaku Gothic Pro", sans-serif;
+  letter-spacing: -0.5px;
+
+  /* セクションを区切る点線 */
+  &::before {
+    grid-area: 4 / 2;
+    place-self: center stretch;
+    content: "";
+    border-block-start: dotted 6px #ddd;
+  }
+
+  &::after {
+    grid-area: 6 / 2;
+    place-self: center stretch;
+    content: "";
+    border-block-start: dotted 6px #ddd;
+  }
+
+  @media (width >= 768px) {
+    &::before {
+      grid-area: 4 / 2 / 4 / -2;
+      align-self: center;
+    }
+
+    &::after {
+      grid-area: 5 / 3;
+      place-self: unset;
+      justify-self: center;
+      content: "";
+      border-inline-start: dotted 6px #ddd;
+    }
+  }
+}

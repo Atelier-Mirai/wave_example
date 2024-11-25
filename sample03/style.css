@@ -1,0 +1,89 @@
+/* グリッド */
+.orange {
+  --side: 20px;
+  display: grid;
+  /* 2行12列のグリッドを生成 */
+  grid-template: auto auto / repeat(12, 1fr);
+  row-gap: 30px;
+  margin-inline: var(--side);
+  margin-block-end: 30px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* 大きい画像 */
+.photo {
+  grid-area: 1 / 1 / 1 / -1;
+  margin-inline: calc(-1 * var(--side));
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 600px;
+
+    /* 文字を読みやすくするために、画像を暗くする */
+    filter: brightness(0.6);
+
+    @media (width >= 768px) {
+      filter: unset;  /* 解除 */
+    }
+  }
+}
+
+/* テキスト */
+.text {
+  /* span 5 は 五列分を意味する */
+  grid-area: 1 / span 5 / 1 / -1;
+  justify-self: end;
+  @media (width >= 768px) {
+    place-self: center;
+  }
+  z-index: 10;
+  padding-inline: 40px;
+  color: #fff;
+  writing-mode: vertical-rl; /* 縦書き */
+  text-shadow: 0px 0px 20px #000;
+
+  /* テキストのグリッド */
+  display: grid;
+  row-gap: 15px;
+  justify-items: end;  /* 縦書きなので、「下」揃えになる */
+
+  h2 {
+    padding-block-end: 20px;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.5;
+  }
+
+  p {
+    height: 18em;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.8;
+  }
+}
+
+/* サブ情報 */
+.sub {
+  grid-column: 1 / -1;
+  @media (width >= 768px) {
+    grid-area: 2 / 1 / 2 / span 6;
+  }
+
+  /* サブ情報のグリッド */
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 10px;
+
+  img {
+    max-height: 120px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: justify;
+  }
+}

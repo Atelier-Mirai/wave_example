@@ -1,0 +1,80 @@
+/*=============================================================================
+  記事一覧
+=============================================================================*/
+
+section {
+  grid-area: recent;
+  /* グリッドレイアウトを用いるように宣言 */
+  /* この一行で、自身がコンテナ（容れ物）になる */
+  display: grid;
+  /* 傘下のアイテム（具材）を入れる枠を二列作る */
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 10px;
+
+  /* 画面幅が768px以上なら */
+  /* @media (width >= 768px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 20px;
+  } */
+
+  /* アンカータグ（リンク）の装飾方法を指定 */
+  a {
+    /* color: var(--kurohairo);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    } */
+  }
+
+  /* 画像の装飾方法を指定 */
+  img {
+    /* 角を丸くする */
+    /* border-radius: 10px;   */
+    /* 影を付ける */
+    /* box-shadow: 水平方向 垂直方向 ぼかし 色 */
+    box-shadow: 3px 3px 5px var(--amairo);
+
+    /* マウスカーソルを重ねたときに */
+    &:hover {
+      /* 少し拡大する */
+      /* scale: 1.1;   */
+      /* 全てのプロパティを、0.5秒、ゆっくり開始し速度を上げた後再び速度を遅く変化させる、遅延時間は0秒(直ちに変化する) */
+      /* transition: プロパティ 継続時間 タイミング関数(中間状態をどう変化させるか) 遅延時間; */
+      /* transition: all 0.5s ease-in-out 0s; */
+    }
+  }
+
+  /* 見出し文字「最新記事」の装飾方法の指定 */
+  h2 {
+    /* 列の配置指定。1番目の線から-1番目（右端）の線まで */
+    grid-column: 1 / -1;
+    /* 書体の指定 */
+    font-family: "Yuji Boku", serif;
+    /* 書体の大きさ */
+    font-size: 24px;
+    /* 書体の太さ */
+    font-weight: normal;
+    /* 文字の配置 */
+    text-align: center;
+    /* 文字の色 */
+    color: var(--kurohairo);
+  }
+
+  h3 {
+    font-size: 14px;
+    margin-block-start: 10px;
+
+    /* 疑似要素を使った装飾 */
+    &::before {
+      content: "▼";
+      color: var(--nanohanairo);
+    }
+
+    &::after {
+      content: "▲";
+      color: var(--utsushiiro);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+/* フッター */
+.foot {
+  grid-area: -2 / 1 / -1 / -1;
+  @media (width >= 768px) {
+    grid-area: -2 / 1 / -2 / -1;
+  }
+
+  padding-block: 30px;
+  background-color: #222;
+  color: #fff;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
