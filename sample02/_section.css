@@ -179,13 +179,18 @@
 
 /* 見出しの金色の横線 */
 /* .sec01 h2::after,
+   .sec02 h2::after,
    .sec03 h2::after { と同じ */
-:is(.sec01, .sec03) h2::after {
-  grid-area: 2 / 1 / 2 / -1;
+:is(.sec01, .sec02, .sec03) h2::after {
   content: "";
   display: block;
   border: solid 4px gold;
   margin-inline-end: -8px;
+  z-index: 1;
+}
+
+:is(.sec01, .sec03) h2::after {
+  grid-area: 2 / 1 / 2 / -1;
 }
 
 /* 見出しの金色の縦線 */
@@ -194,7 +199,6 @@
   align-self: stretch;
   margin-block-end: -45px;
   margin-inline-end: 5px;
-  z-index: 1;
 }
 
 @media (width >= 768px) {
